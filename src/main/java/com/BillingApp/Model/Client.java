@@ -8,6 +8,10 @@ public class Client {
     private String email;
     private String password;
 
+    public Client(){
+
+    }
+
     public Client(String name, int age, String email, String password) {
         this.name = name;
         this.age = age;
@@ -66,6 +70,9 @@ public class Client {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, email, password);
+        int result = email.hashCode();
+        result = 31 * result + password.hashCode();
+        result = 31 * result + name.hashCode();
+        return result;
     }
 }

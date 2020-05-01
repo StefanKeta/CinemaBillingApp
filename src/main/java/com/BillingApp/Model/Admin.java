@@ -8,6 +8,10 @@ public class Admin {
     private String email;
     private String password;
 
+    public Admin(){
+
+    }
+
     public Admin(String city, String cinemaName, String email, String password) {
         this.city = city;
         this.cinemaName = cinemaName;
@@ -68,7 +72,10 @@ public class Admin {
 
     @Override
     public int hashCode() {
-        return Objects.hash(city, cinemaName, email, password);
+        int result = email.hashCode();
+        result = 31 * result + password.hashCode();
+        result = 31 * result + cinemaName.hashCode();
+        return result;
     }
 
 

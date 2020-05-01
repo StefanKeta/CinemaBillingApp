@@ -33,7 +33,7 @@ public class AdminService {
     public static void addAdmin(String email,String password,String city, String cinemaName) throws EmailAlreadyExistsException{
         ClientService.checkClientDoesNotAlreadyExist(email);
         checkAdminDoesNotAlreadyExist(email);
-        admins.add(new Admin(city,cinemaName,email,password));
+        admins.add(new Admin(city,cinemaName,email,encodePassword(email,password)));
         persistAdmins();
     }
 
@@ -55,5 +55,23 @@ public class AdminService {
         }
     }
 
+    private static String encodePassword(String salt,String password) {
+        MessageDigest md = getMessageDigest();
+        md.update(salt.getBytes(StandardCharsets.UTF_8));
 
+        byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+
+        return new String(hashedPassword, StandardCharsets.UTF_8)
+                .replace("\"", "");
+    }
+
+    private static MessageDigest getMessageDigest() {
+        MessageDigest md;
+        try {
+            md = MessageDigest.getInstance("SHA-512");
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("SHA-512 does not exist!");
+        }
+        return md;
+    }
 }

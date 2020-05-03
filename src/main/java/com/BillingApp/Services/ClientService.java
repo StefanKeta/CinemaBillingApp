@@ -3,7 +3,6 @@ package com.BillingApp.Services;
 import com.BillingApp.Exceptions.CouldNotWriteUsersException;
 import com.BillingApp.Exceptions.EmailAlreadyExistsException;
 import com.BillingApp.Model.Client;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
@@ -17,7 +16,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class ClientService {
-    private  static List<Client> clients;
+    private static List<Client> clients;
     private  static final Path CLIENTS_PATH =FileService.getPathToFile("config","clients.json");
 
     public static void loadClients() throws IOException{
@@ -53,7 +52,7 @@ public class ClientService {
         }
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
@@ -71,5 +70,8 @@ public class ClientService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return md;
+    }
+    public static List<Client> getClientList() {
+        return clients;
     }
 }

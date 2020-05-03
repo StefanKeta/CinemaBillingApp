@@ -1,5 +1,6 @@
 package com.BillingApp;
 
+import com.BillingApp.Model.Client;
 import com.BillingApp.Services.AdminService;
 import com.BillingApp.Services.ClientService;
 import javafx.application.Application;
@@ -19,7 +20,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

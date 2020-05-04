@@ -3,7 +3,6 @@ package com.BillingApp.Services;
 import com.BillingApp.Exceptions.CouldNotWriteUsersException;
 import com.BillingApp.Exceptions.EmailAlreadyExistsException;
 import com.BillingApp.Model.Admin;
-import com.BillingApp.Model.Client;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
@@ -37,14 +36,12 @@ public class AdminService {
         persistAdmins();
     }
 
-
     public static void checkAdminDoesNotAlreadyExist(String email) throws EmailAlreadyExistsException {
         for(Admin admin:admins){
             if(email.equals(admin.getEmail()))
                 throw new EmailAlreadyExistsException(email);
         }
     }
-
 
     private static void persistAdmins(){
         try {
@@ -55,7 +52,7 @@ public class AdminService {
         }
     }
 
-    private static String encodePassword(String salt,String password) {
+    public static String encodePassword(String salt,String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
@@ -73,5 +70,9 @@ public class AdminService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return md;
+    }
+
+    public static List<Admin> getAdminList() {
+        return admins;
     }
 }

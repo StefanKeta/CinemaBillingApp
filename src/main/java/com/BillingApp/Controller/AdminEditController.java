@@ -8,12 +8,17 @@ import com.BillingApp.Services.FileService;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 
@@ -30,7 +35,14 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AdminEditController implements Initializable {
-    private @FXML ListView<Movie> listView;
+     @FXML private ListView<Movie> listView;
+     @FXML private TextField title;
+     @FXML private TextField trailer;
+     @FXML private TextField price;
+     @FXML private TextField duration;
+     @FXML private TextArea description;
+     @FXML private Label movieAdded;
+     @FXML private Label movieEdited;
 
     private List<Movie> movies= new ArrayList<>();
     private  static  Path MOVIE_PATH = FileService.getPathToFile("Movies", Main.getCurrentAdmin().getCinemaName()+".json");
@@ -55,17 +67,41 @@ public class AdminEditController implements Initializable {
         }
     }
 
-    public void onBackClick(ActionEvent event){
+    public void onBackClick(ActionEvent event) throws IOException{
+        Stage stage = (Stage)listView.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/AdminMode.fxml"));
+        Scene scene= new Scene(root,600,400);
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public void onEditClick(ActionEvent event){
+    public void onEditClick(ActionEvent event) throws IOException{
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/EditMovie.fxml"));
+        Scene scene= new Scene(root,600,400);
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public void onAddClick(ActionEvent event){
+    public void onAddClick(ActionEvent event) throws IOException{
+        Stage stage = new Stage();
+        Parent root= FXMLLoader.load(getClass().getResource("/AddMovie.fxml"));
+        Scene scene = new Scene(root,600,400);
+        stage.setScene(scene);
+        stage.show();
 
     }
 
     public void onDeleteClick(ActionEvent event){
 
     }
+
+    public void onEditMovieClick(ActionEvent event){
+        movieEdited.setText("Movie Edited");
+    }
+
+    public void onAddMovieClick(ActionEvent event){
+        movieAdded.setText("Movie Added");
+    }
+
 }

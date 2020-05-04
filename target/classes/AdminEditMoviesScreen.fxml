@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.AdminEditController">
+    <children>
+        <ListView fx:id="listView" layoutX="111.0" layoutY="23.0" prefHeight="315.0" prefWidth="461.0" />
+        <Button layoutX="26.0" layoutY="27.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="47.0" text="Back" />
+        <Button layoutX="111.0" layoutY="350.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="Edit" />
+        <Button layoutX="304.0" layoutY="350.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="Add" />
+        <Button layoutX="497.0" layoutY="350.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="Delete" />
+    </children>
 </AnchorPane>

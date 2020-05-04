@@ -1,6 +1,7 @@
 package com.BillingApp.Controller;
 
 import com.BillingApp.Exceptions.EmailAlreadyExistsException;
+import com.BillingApp.Main;
 import com.BillingApp.Model.Admin;
 import com.BillingApp.Model.Client;
 import com.BillingApp.Services.AdminService;
@@ -42,6 +43,7 @@ public class LoginController {
         for (Admin admin : AdminService.getAdminList())
             if (email.getText().equals(admin.getEmail()) && encodePassword(String.valueOf(email.getText()), password.getText()).equals(admin.getPassword())) {
                 message.setText("You will be logged in as an admin");
+                Main.setCurrentAdmin(admin);
                 Stage stage = (Stage) email.getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("/AdminMode.fxml"));
                 stage.setScene(new Scene(root, 600, 400));

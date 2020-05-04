@@ -1,5 +1,6 @@
 package com.BillingApp;
 
+import com.BillingApp.Model.Admin;
 import com.BillingApp.Model.Client;
 import com.BillingApp.Services.AdminService;
 import com.BillingApp.Services.ClientService;
@@ -11,11 +12,13 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    private static Admin currentAdmin;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         ClientService.loadClients();
         AdminService.loadAdmins();
-        Parent root= FXMLLoader.load(getClass().getResource("/RegistrationScreen.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("/Login.fxml"));
         primaryStage.setTitle("Cinema Billing App");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
@@ -24,4 +27,13 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    public static Admin getCurrentAdmin() {
+        return currentAdmin;
+    }
+
+    public static void setCurrentAdmin(Admin currentAdmin) {
+        Main.currentAdmin = currentAdmin;
+    }
 }
+

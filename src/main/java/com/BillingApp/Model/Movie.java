@@ -7,13 +7,22 @@ public class Movie {
     private String description;
     private double price;
     private String trailer;
+    private String startDate;
+    private String endDate;
+    private String[] times ={"hh:mm", "hh:mm","hh:mm"};
 
-    public Movie(String name, String duration, String description, double price,String trailer) {
+    public Movie(){
+
+    }
+    public Movie(String name, String duration, String description, String trailer,double price,String startDate,String endDate,String[]times) {
         this.name = name;
         this.duration = duration;
         this.description = description;
         this.price=price;
         this.trailer=trailer;
+        this.startDate=startDate;
+        this.endDate=endDate;
+        this.times=times;
     }
 
     public String getName() {
@@ -54,5 +63,33 @@ public class Movie {
 
     public void setTrailer(String trailer) {
         this.trailer = trailer;
+    }
+
+    public String toString(){
+        return this.name + "\t"+ duration+ "\t" + price;
+    }
+    String getStartDate() {
+
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String[] getTimes() {
+        return times;
+    }
+
+    public void setTimes(String[] times) {
+        this.times = times;
     }
 }

@@ -18,7 +18,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         ClientService.loadClients();
         AdminService.loadAdmins();
-        Parent root= FXMLLoader.load(getClass().getResource("/Login.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("/RegistrationScreen.fxml"));
         primaryStage.setTitle("Cinema Billing App");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();

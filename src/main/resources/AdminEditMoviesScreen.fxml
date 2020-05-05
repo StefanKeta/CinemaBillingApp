@@ -6,8 +6,8 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.AdminEditController">
     <children>
+        <Button layoutX="26.0" layoutY="27.0" mnemonicParsing="false" onAction="#onBack" prefHeight="26.0" prefWidth="75.0" text="Back" />
         <ListView fx:id="listView" layoutX="117.0" layoutY="23.0" prefHeight="315.0" prefWidth="456.0" />
-        <Button layoutX="26.0" layoutY="27.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="Back" />
         <Button layoutX="117.0" layoutY="350.0" mnemonicParsing="false" onAction="#onEditClick" prefHeight="26.0" prefWidth="75.0" text="Edit" />
         <Button layoutX="304.0" layoutY="350.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="26.0" prefWidth="75.0" text="Add" />
         <Button layoutX="497.0" layoutY="350.0" mnemonicParsing="false" onAction="#onDeleteClick" prefHeight="26.0" prefWidth="75.0" text="Delete" />

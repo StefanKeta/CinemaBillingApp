@@ -52,6 +52,7 @@ public class LoginController {
         for (Client client : ClientService.getClientList())
             if (email.getText().equals(client.getEmail()) && encodePassword(email.getText(),password.getText()).equals(client.getPassword())) {
                 message.setText("You will be logged in as a client");
+                Main.setCurrentClient(client);
                 Stage stage = (Stage) email.getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("/ClientMode.fxml"));
                 stage.setScene(new Scene(root, 600, 400));

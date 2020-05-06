@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.ClientSelectMovieController">
+   <children>
+      <Button layoutX="14.0" layoutY="62.0" mnemonicParsing="false" text="Contact admin" />
+      <Button layoutX="151.0" layoutY="351.0" mnemonicParsing="false" text="See description" />
+      <Button layoutX="332.0" layoutY="351.0" mnemonicParsing="false" text="Book tickets!" />
+      <ListView fx:id="listView" layoutX="151.0" layoutY="27.0" prefHeight="302.0" prefWidth="361.0" />
+      <Label fx:id="noMovie" layoutX="444.0" layoutY="355.0" text="No movie selected!" />
+      <Button layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="94.0" text="Back" />
+   </children>
+</AnchorPane>

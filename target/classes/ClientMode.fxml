@@ -10,7 +10,7 @@
    <children>
       <ChoiceBox fx:id="city" layoutX="205.0" layoutY="147.0" prefHeight="30.0" prefWidth="190.0" />
       <ChoiceBox fx:id="cinema" layoutX="204.0" layoutY="215.0" prefHeight="30.0" prefWidth="190.0" />
-      <Button layoutX="276.0" layoutY="297.0" mnemonicParsing="false" text="Select" />
+      <Button layoutX="276.0" layoutY="297.0" mnemonicParsing="false" onAction="#onSelectClick" text="Select" />
       <Label layoutX="200.0" layoutY="90.0" text="Select your cinema">
          <font>
             <Font size="24.0" />
@@ -24,6 +24,11 @@
       <Label layoutX="138.0" layoutY="216.0" text="Cinema">
          <font>
             <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="welcomeLabel" contentDisplay="CENTER" layoutX="250.0" layoutY="54.0" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
          </font>
       </Label>
    </children>

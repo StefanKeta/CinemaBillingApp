@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     private static Admin currentAdmin;
+    private static Client currentClient;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -34,6 +35,14 @@ public class Main extends Application {
 
     public static void setCurrentAdmin(Admin currentAdmin) {
         Main.currentAdmin = currentAdmin;
+    }
+
+    public static Client getCurrentClient() {
+        return currentClient;
+    }
+
+    public static void setCurrentClient(Client currentClient) {
+        Main.currentClient = currentClient;
     }
 }
 

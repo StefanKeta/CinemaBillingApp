@@ -9,6 +9,6 @@
       <Button layoutX="242.0" layoutY="102.0" mnemonicParsing="false" onAction="#onEditMovies" prefHeight="47.0" prefWidth="108.0" text="Edit movie list" />
       <Button layoutX="242.0" layoutY="233.0" mnemonicParsing="false" onAction="#onBuyingRequests" prefHeight="47.0" prefWidth="108.0" text="See Buying Requests" />
       <Button layoutX="242.0" layoutY="167.0" mnemonicParsing="false" onAction="#onStatistics" prefHeight="47.0" prefWidth="108.0" text="Get Statistics" />
-      <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="242.0" layoutY="46.0" prefHeight="17.0" prefWidth="108.0" />
+      <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="48.0" prefHeight="35.0" prefWidth="185.0" />
    </children>
 </Pane>

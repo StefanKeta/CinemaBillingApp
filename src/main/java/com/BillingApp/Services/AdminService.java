@@ -43,7 +43,7 @@ public class AdminService {
         }
     }
 
-    private static void persistAdmins(){
+    public static void persistAdmins(){
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(ADMIN_PATH.toFile(), admins);

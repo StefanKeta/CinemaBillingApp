@@ -2,10 +2,36 @@
   "city" : "Timisoara",
   "cinemaName" : "Cinema City",
   "email" : "alexandra@mail.com",
-  "password" : "����\u0003/P�a��ocB�:����QO�\u0000��(Ы�\u0010_��S\u0005��XD�\u0014�a�Ց^��͆e�[�\u0000;���i�"
+  "password" : "����\u0003/P�a��ocB�:����QO�\u0000��(Ы�\u0010_��S\u0005��XD�\u0014�a�Ց^��͆e�[�\u0000;���i�",
+  "movieList" : [ ]
 }, {
   "city" : "Timisoara",
   "cinemaName" : "Stefan Cinema",
   "email" : "stefanketa@mail.com",
-  "password" : "����j�_t\u000EDw�g�|b\f�d�^���Z�\u001E6�C[��,T \r!X�p-�eH\r\u001B�9X�\u0007�f�ȷh\u000Fl�~="
+  "password" : "����j�_t\u000EDw�g�|b\f�d�^���Z�\u001E6�C[��,T \r!X�p-�eH\r\u001B�9X�\u0007�f�ȷh\u000Fl�~=",
+  "movieList" : [ ]
+}, {
+  "city" : "Timisoara",
+  "cinemaName" : "Stefan",
+  "email" : "stefan@gmail.com",
+  "password" : "I�p�� \u0005�©��;��x��4�\u0011��\u0010W���=�\u0001\b�k�\u0002S�J�\u0003nO�E\u001E0���@��\u001D)ǲ\u0013\u001C",
+  "movieList" : [ {
+    "name" : "Movie1",
+    "duration" : "01:30:00",
+    "description" : "Descriere",
+    "price" : 14.3,
+    "trailer" : "Trailer",
+    "startDate" : "2020-05-06",
+    "endDate" : "2020-05-13",
+    "times" : [ "13:00", "15:00", "16:00" ]
+  }, {
+    "name" : "Movie2",
+    "duration" : "01:30:00",
+    "description" : "Descriere",
+    "price" : 15.0,
+    "trailer" : "Movie",
+    "startDate" : null,
+    "endDate" : "2020-05-13",
+    "times" : [ "20:00", "12:00", "11:00" ]
+  } ]
 } ]

@@ -28,6 +28,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -44,47 +45,26 @@ public class AdminEditController implements Initializable {
     @FXML private DatePicker fromDate;
     @FXML private DatePicker toDate;
     @FXML private TextField times;
+    @FXML private Label error;
 
-
-    private static Path MOVIE_PATH = FileService.getPathToFile("Movies", Main.getCurrentAdmin().getCinemaName() + ".json");
-    private ObservableList<Movie> movies;
     private int position;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        if (!Files.exists(MOVIE_PATH)) {
-            try {
-                String aux = "[]";
-                objectMapper.writeValue(MOVIE_PATH.toFile(), aux);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-
-        try {
-            movies = FXCollections.observableArrayList(
-                    objectMapper.readValue(MOVIE_PATH.toFile(), new TypeReference<List<Movie>>() {
-                    }));
-            listView.setItems(movies);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        listView.setEditable(true);
+        listView.getItems().addAll(Main.getCurrentAdmin().getMovieList());
     }
 
 
     public void onBackClick(ActionEvent event) throws IOException{
         Stage stage = (Stage)title.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/AdminMode.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/AdminEditMoviesScreen.fxml"));
         Scene scene= new Scene(root,600,400);
         stage.setScene(scene);
         stage.show();
     }
 
     public void onBack(ActionEvent event) throws IOException {
-        Stage stage = (Stage)title.getScene().getWindow();
+        Stage stage = (Stage)listView.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/AdminMode.fxml"));
         Scene scene= new Scene(root,600,400);
         stage.setScene(scene);
@@ -96,16 +76,19 @@ public class AdminEditController implements Initializable {
             position= listView.getSelectionModel().getSelectedIndex();
 
         }
+        if(listView.getItems().isEmpty()) {
+            error.setText("No movie available");
+            return;
+        }
+        if(listView.getSelectionModel().isEmpty()) {
+            error.setText("No movie selected");
+            return;
+        }
         Stage stage = (Stage)listView.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/EditMovie.fxml"));
         Scene scene= new Scene(root,600,400);
         stage.setScene(scene);
         stage.show();
-        if(listView.getItems().isEmpty()) {
-            stage.close();
-        }
-        if(listView.getSelectionModel().isEmpty())
-            stage.close();
 
     }
 
@@ -120,7 +103,8 @@ public class AdminEditController implements Initializable {
 
     public void onDeleteClick(ActionEvent event) throws IOException {
         listView.getItems().remove(listView.getSelectionModel().getSelectedItem());
-        persistMovies();
+        Main.getCurrentAdmin().setMovieList(listView.getItems());
+        AdminService.persistAdmins();
     }
 
     public void onEditMovieClick(ActionEvent event) throws IOException {
@@ -128,31 +112,23 @@ public class AdminEditController implements Initializable {
         listView.getItems().get(position).setPrice(Double.parseDouble(price.getText()));
         listView.getItems().get(position).setDuration(duration.getText());
         listView.getItems().get(position).setDescription(description.getText());
-        listView.getItems().get(position).setStartDate(fromDate.toString());
-        listView.getItems().get(position).setEndDate(toDate.toString());
-        listView.getItems().get(position).setTimes(times.getText().split(","));
+        listView.getItems().get(position).setStartDate(fromDate.getValue().toString());
+        listView.getItems().get(position).setEndDate(toDate.getValue().toString());
+        listView.getItems().get(position).setTimes(Arrays.asList(times.getText().split(",")));
+        Main.getCurrentAdmin().setMovieList(listView.getItems());
         movieEdited.setText("Movie Edited");
-        persistMovies();
-
+        AdminService.persistAdmins();
     }
 
     public void onAddMovieClick(ActionEvent event){
-        Movie movie = new Movie(title.getText(),duration.getText(),description.getText(),trailer.getText(),Double.parseDouble(price.getText()),fromDate.getValue().toString(),toDate.getValue().toString(),times.getText().split(","));
+        Movie movie = new Movie(title.getText(),duration.getText(),description.getText(),trailer.getText(),Double.parseDouble(price.getText()),fromDate.getValue().toString(),toDate.getValue().toString(), Arrays.asList(times.getText().split(",")));
         listView.getItems().add(movie);
-        persistMovies();
+        Main.getCurrentAdmin().setMovieList(listView.getItems());
+        AdminService.persistAdmins();
         movieAdded.setText("Movie added");
 
     }
 
-    private void persistMovies(){
-        {
-            try {
-                ObjectMapper objectMapper= new ObjectMapper();
-                objectMapper.writerWithDefaultPrettyPrinter().writeValue(MOVIE_PATH.toFile(),listView.getItems());
-            }catch (IOException e){
-                throw new CouldNotWriteUsersException();
-            }
-        }
-    }
+
 
 }

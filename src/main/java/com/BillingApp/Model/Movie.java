@@ -1,6 +1,10 @@
 package com.BillingApp.Model;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Movie {
     private String name;
     private String duration;
@@ -9,12 +13,12 @@ public class Movie {
     private String trailer;
     private String startDate;
     private String endDate;
-    private String[] times ={"hh:mm", "hh:mm","hh:mm"};
+    private List<String> times =new ArrayList<String>();
 
     public Movie(){
-
     }
-    public Movie(String name, String duration, String description, String trailer,double price,String startDate,String endDate,String[]times) {
+
+    public Movie(String name, String duration, String description, String trailer,double price,String startDate,String endDate,List<String> times) {
         this.name = name;
         this.duration = duration;
         this.description = description;
@@ -65,10 +69,8 @@ public class Movie {
         this.trailer = trailer;
     }
 
-    public String toString(){
-        return this.name + "\t"+ duration+ "\t" + price;
-    }
-    String getStartDate() {
+
+    public String getStartDate() {
 
         return startDate;
     }
@@ -85,11 +87,19 @@ public class Movie {
         this.endDate = endDate;
     }
 
-    public String[] getTimes() {
+    public List<String> getTimes() {
         return times;
     }
 
-    public void setTimes(String[] times) {
+    public void setTimes(List<String> times) {
         this.times = times;
+    }
+
+    @Override
+    public String toString() {
+        return  name + '\t' +
+                duration + '\t'  +
+                 price
+                ;
     }
 }

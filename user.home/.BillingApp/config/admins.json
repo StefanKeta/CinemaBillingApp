@@ -34,4 +34,10 @@
     "endDate" : "2020-05-13",
     "times" : [ "20:00", "12:00", "11:00" ]
   } ]
+}, {
+  "city" : "Resita",
+  "cinemaName" : "Alexandra Cinema",
+  "email" : "alexandrag@mail.com",
+  "password" : "p?�(��}~>��\u001DQ_�\u0003B�\u0016��\u0007�.%��C<lL�k\n?4��6+\u001E:eh�QR�^���-\u0004\u0016�\n�\u0015�~��",
+  "movieList" : [ ]
 } ]

@@ -8,4 +8,9 @@
   "age" : 20,
   "email" : "user@mail.com",
   "password" : "someuser"
+}, {
+  "name" : "Stefan Keta",
+  "age" : 21,
+  "email" : "stefank@mail.com",
+  "password" : "\u001D�W��8���H\f/^p'\u0002߻|��\n2Q��X|\u001A�-\t��Ygf*ؿ~6\u0012\u0011#�`B�C���� ���<\u000B�\u0018"
 } ]

@@ -33,7 +33,7 @@ public class ClientModeController implements Initializable {
     @FXML private ChoiceBox<String> city;
     @FXML private ChoiceBox<String> cinema;
     @FXML private ListView<Movie> listView;
-    @FXML private Label noMovieSelected;
+    @FXML private Label errorLabel;
 
     private List<Admin> admins= new ArrayList<Admin>();
     private List<Movie> movies = new ArrayList<Movie>();
@@ -70,6 +70,10 @@ public class ClientModeController implements Initializable {
 
 
     public void onSelectClick() throws IOException{
+        if(city.getSelectionModel().getSelectedItem().isEmpty()||cinema.getSelectionModel().getSelectedItem().isEmpty()){
+            errorLabel.setText("Please select the city and the cinema");
+            return;
+        }
         Stage stage= (Stage) welcomeLabel.getScene().getWindow();
 
         Parent root= FXMLLoader.load(getClass().getResource("/ClientSelectMovieScreen.fxml"));
@@ -80,7 +84,7 @@ public class ClientModeController implements Initializable {
 
     public void onBackClick() throws IOException{
         Stage stage=(Stage) listView.getScene().getWindow();
-        Parent root=FXMLLoader.load(getClass().getResource("/ClientMode.fxml"));
+        Parent root=FXMLLoader.load(getClass().getResource("/Login.fxml"));
         Scene scene = new Scene(root,600,400);
         stage.setScene(scene);
         stage.show();

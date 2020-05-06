@@ -1,6 +1,7 @@
 package com.BillingApp.Controller;
 
 import com.BillingApp.Model.Movie;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +21,7 @@ public class ClientSelectMovieController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        listView.getItems().addAll(ClientModeController.getSelectedCinema().getMovieList());
 
     }
 
@@ -29,6 +31,17 @@ public class ClientSelectMovieController implements Initializable {
         Scene scene = new Scene(root,600,400);
         stage.setScene(scene);
         stage.show();
+    }
 
+    public void onContactClick(ActionEvent event){
+        //TO-DO
+    }
+
+    public void onSeeDetailsClick(ActionEvent event){
+        //TO-DO
+    }
+
+    public void onBuyClick(ActionEvent event){
+        //TO-DO
     }
 }

@@ -54,7 +54,9 @@ public class ClientSelectMovieController implements Initializable {
         stage.show();
     }
 
-
+    public void onBookClick(ActionEvent event){
+        //TO-DO
+    }
 
     public static Movie getSelectedMovie() {
         return selectedMovie;

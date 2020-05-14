@@ -9,7 +9,16 @@
   "cinemaName" : "Stefan Cinema",
   "email" : "stefanketa@mail.com",
   "password" : "����j�_t\u000EDw�g�|b\f�d�^���Z�\u001E6�C[��,T \r!X�p-�eH\r\u001B�9X�\u0007�f�ȷh\u000Fl�~=",
-  "movieList" : [ ]
+  "movieList" : [ {
+    "name" : "Stefan1",
+    "duration" : "01:30:00",
+    "description" : "Test",
+    "price" : 15.15,
+    "trailer" : "https://stackoverflow.com/questions/24202337/javafx-open-url-in-chrome-browser",
+    "startDate" : "2020-05-04",
+    "endDate" : "2020-05-26",
+    "times" : [ "01:00", "13:00", "14:00" ]
+  } ]
 }, {
   "city" : "Timisoara",
   "cinemaName" : "Stefan",

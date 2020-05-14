@@ -30,9 +30,8 @@ import java.util.ResourceBundle;
 public class ClientModeController implements Initializable {
 
     @FXML private Label welcomeLabel;
-    @FXML private ChoiceBox<String> city;
-    @FXML private ChoiceBox<String> cinema;
-    @FXML private ListView<Movie> listView;
+    @FXML private ChoiceBox<String> city=new ChoiceBox<>();
+    @FXML private ChoiceBox<String> cinema=new ChoiceBox<>();
     @FXML private Label errorLabel;
 
     private List<Admin> admins= new ArrayList<Admin>();
@@ -41,7 +40,7 @@ public class ClientModeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        welcomeLabel.setText("Welcome " + Main.getCurrentClient().getName()+"!");
+        welcomeLabel.setText("Welcome, " + Main.getCurrentClient().getName()+"!");
         AdminService.persistAdmins();
         admins.addAll(AdminService.getAdminList());
         List<String> cities=new ArrayList<>();
@@ -53,6 +52,8 @@ public class ClientModeController implements Initializable {
         }
         city.getItems().addAll(cities);
         city.setOnAction(e->{
+            cinema.getItems().clear();
+            cinemas.clear();
             for(Admin admin:admins){
                 if(admin.getCity().equals(city.getSelectionModel().getSelectedItem()))
                     cinemas.add(admin.getCinemaName());
@@ -70,8 +71,12 @@ public class ClientModeController implements Initializable {
 
 
     public void onSelectClick() throws IOException{
-        if(city.getSelectionModel().getSelectedItem().isEmpty()||cinema.getSelectionModel().getSelectedItem().isEmpty()){
-            errorLabel.setText("Please select the city and the cinema");
+        if(city.getSelectionModel().getSelectedItem()==null || cinema.getSelectionModel().getSelectedItem()==null){
+            errorLabel.setText("Please select both the city and the cinema!");
+            return;
+        }
+        if(selectedCinema.getMovieList().isEmpty()){
+            errorLabel.setText("The selected cinema has no movies available!");
             return;
         }
         Stage stage= (Stage) welcomeLabel.getScene().getWindow();
@@ -82,8 +87,8 @@ public class ClientModeController implements Initializable {
         stage.show();
     }
 
-    public void onBackClick() throws IOException{
-        Stage stage=(Stage) listView.getScene().getWindow();
+    public void onLogOut() throws IOException{
+        Stage stage= (Stage) city.getScene().getWindow();
         Parent root=FXMLLoader.load(getClass().getResource("/Login.fxml"));
         Scene scene = new Scene(root,600,400);
         stage.setScene(scene);

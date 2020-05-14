@@ -10,25 +10,27 @@
    <children>
       <ChoiceBox fx:id="city" layoutX="205.0" layoutY="147.0" prefHeight="30.0" prefWidth="190.0" />
       <ChoiceBox fx:id="cinema" layoutX="204.0" layoutY="215.0" prefHeight="30.0" prefWidth="190.0" />
-      <Button layoutX="276.0" layoutY="297.0" mnemonicParsing="false" onAction="#onSelectClick" text="Select" />
-      <Label layoutX="200.0" layoutY="90.0" text="Select your cinema">
+      <Button layoutX="265.0" layoutY="291.0" mnemonicParsing="false" onAction="#onSelectClick" prefHeight="30.0" prefWidth="68.0" text="Select" />
+      <Label layoutX="193.0" layoutY="90.0" text="Select your cinema">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="153.0" layoutY="148.0" prefHeight="27.0" prefWidth="30.0" text="City">
+      <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="107.0" layoutY="55.0" prefHeight="35.0" prefWidth="386.0" textAlignment="CENTER">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="138.0" layoutY="216.0" text="Cinema">
+      <Label fx:id="errorLabel" contentDisplay="CENTER" layoutX="96.0" layoutY="336.0" prefHeight="30.0" prefWidth="408.0" textAlignment="CENTER" />
+      <Button layoutX="41.0" layoutY="29.0" mnemonicParsing="false" onAction="#onLogOut" text="Log out" />
+      <Label layoutX="85.0" layoutY="144.0" prefHeight="35.0" prefWidth="86.0" text="City">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="welcomeLabel" contentDisplay="CENTER" layoutX="250.0" layoutY="54.0" textAlignment="CENTER">
+      <Label layoutX="85.0" layoutY="212.0" prefHeight="35.0" prefWidth="86.0" text="Cinema">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
    </children>

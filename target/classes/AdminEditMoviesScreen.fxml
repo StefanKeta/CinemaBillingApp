@@ -12,6 +12,6 @@
         <Button layoutX="117.0" layoutY="350.0" mnemonicParsing="false" onAction="#onEditClick" prefHeight="26.0" prefWidth="75.0" text="Edit" />
         <Button layoutX="304.0" layoutY="350.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="26.0" prefWidth="75.0" text="Add" />
         <Button layoutX="497.0" layoutY="350.0" mnemonicParsing="false" onAction="#onDeleteClick" prefHeight="26.0" prefWidth="75.0" text="Delete" />
-      <Label fx:id="error" alignment="CENTER" layoutX="26.0" layoutY="212.0" prefHeight="64.0" prefWidth="75.0" textAlignment="CENTER" />
+      <Label fx:id="error" alignment="CENTER" layoutX="26.0" layoutY="212.0" prefHeight="26.0" prefWidth="75.0" textAlignment="CENTER" wrapText="true" />
     </children>
 </AnchorPane>

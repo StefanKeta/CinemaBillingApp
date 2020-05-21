@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.MovieDetailsController">
+   <children>
+      <Label fx:id="title" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="14.0" prefHeight="18.0" prefWidth="346.0" text="Title" wrapText="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="127.0" prefHeight="27.0" prefWidth="346.0" text="Duration" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="64.0" prefHeight="18.0" prefWidth="346.0" text="Trailer" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="toDate" contentDisplay="CENTER" layoutX="208.0" layoutY="37.0" prefHeight="27.0" prefWidth="163.0" text="to:" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="fromDate" contentDisplay="CENTER" layoutX="41.0" layoutY="37.0" prefHeight="27.0" prefWidth="142.0" text="from:" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Hyperlink fx:id="trailer" layoutX="29.0" layoutY="97.0" prefHeight="23.0" prefWidth="346.0" text="TrailerLink" wrapText="true" />
+      <Label alignment="CENTER" layoutX="145.0" layoutY="186.0" prefHeight="27.0" prefWidth="108.0" text="Ticket price">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="duration" alignment="CENTER" layoutX="7.0" layoutY="154.0" prefHeight="27.0" prefWidth="387.0" text="duration" />
+      <Label fx:id="price" alignment="CENTER" layoutX="8.0" layoutY="213.0" prefHeight="23.0" prefWidth="387.0" text="price" />
+      <TextArea fx:id="description" layoutX="19.0" layoutY="267.0" prefHeight="118.0" prefWidth="359.0" />
+      <Label alignment="CENTER" layoutX="148.0" layoutY="239.0" prefHeight="27.0" prefWidth="108.0" text="Description">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

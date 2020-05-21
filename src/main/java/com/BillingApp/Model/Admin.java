@@ -1,5 +1,7 @@
 package com.BillingApp.Model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Admin {
@@ -7,6 +9,7 @@ public class Admin {
     private String cinemaName;
     private String email;
     private String password;
+    private List<Movie> movieList= new ArrayList<>();
 
     public Admin(){
 
@@ -58,6 +61,7 @@ public class Admin {
                 ", cinemaName='" + cinemaName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", movieList=" + movieList +
                 '}';
     }
 
@@ -78,5 +82,15 @@ public class Admin {
         return result;
     }
 
+    public List<Movie> getMovieList() {
+        return movieList;
+    }
 
+    public void addMovie(Movie m){
+        movieList.add(m);
+    }
+
+    public void setMovieList(List<Movie> movieList) {
+        this.movieList = movieList;
+    }
 }

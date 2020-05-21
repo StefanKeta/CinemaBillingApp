@@ -1,5 +1,6 @@
 package com.BillingApp;
 
+import com.BillingApp.Model.Admin;
 import com.BillingApp.Model.Client;
 import com.BillingApp.Services.AdminService;
 import com.BillingApp.Services.ClientService;
@@ -10,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
+    private static Admin currentAdmin;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -24,4 +27,13 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    public static Admin getCurrentAdmin() {
+        return currentAdmin;
+    }
+
+    public static void setCurrentAdmin(Admin currentAdmin) {
+        Main.currentAdmin = currentAdmin;
+    }
 }
+

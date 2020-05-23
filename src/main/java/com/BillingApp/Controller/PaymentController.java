@@ -10,10 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.net.URL;
@@ -29,11 +26,13 @@ public class PaymentController implements Initializable {
     @FXML private DatePicker datePicker;
     @FXML private TextField cardText;
     @FXML private Label errorLabel;
+    @FXML private CheckBox sendViaMail;
     private Seat selectedSeat;
     private List<Seat> availableSeats=new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        sendViaMail.setSelected(false);
         List<Seat> unavailableSeats= new ArrayList<>();
         Image image= new Image("/seats.JPG");
         seatView.setImage(image);
@@ -76,13 +75,17 @@ public class PaymentController implements Initializable {
             errorLabel.setText("Not a valid card");
             return;
         }
-        Booking booking = new Booking(ClientSelectMovieController.getSelectedMovie().getName(),datePicker.getValue().toString(),hours.getSelectionModel().getSelectedItem(),selectedSeat,ClientSelectMovieController.getSelectedMovie().getPrice());
+        Booking booking = new Booking(Main.getCurrentClient().getEmail(),
+                ClientSelectMovieController.getSelectedMovie().getName(),datePicker.getValue().toString(),
+                hours.getSelectionModel().getSelectedItem(),selectedSeat,
+                ClientSelectMovieController.getSelectedMovie().getPrice(),sendViaMail.isSelected());
         ClientModeController.getSelectedCinema().addBooking(booking);
         AdminService.persistAdmins();
         errorLabel.setText("Booking successful!");
 
-
     }
+
+
 
 }
 

@@ -30,7 +30,7 @@ public class Movie {
         this.startDate=startDate;
         this.endDate=endDate;
         this.times=times;
-        for(char c = 'A' ;c<'C';c++)
+        for(char c = 'A' ;c<='C';c++)
             for(int i=1;i<=6;i++)
                 seats.add(new Seat(c,i));
     }

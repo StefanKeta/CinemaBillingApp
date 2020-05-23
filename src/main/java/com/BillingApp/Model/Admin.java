@@ -2,7 +2,6 @@ package com.BillingApp.Model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Admin {
     private String city;
@@ -10,6 +9,7 @@ public class Admin {
     private String email;
     private String password;
     private List<Movie> movieList= new ArrayList<>();
+    private List<Booking> bookings = new ArrayList<>();
 
     public Admin(){
 
@@ -92,5 +92,17 @@ public class Admin {
 
     public void setMovieList(List<Movie> movieList) {
         this.movieList = movieList;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
     }
 }

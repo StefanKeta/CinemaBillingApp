@@ -4,6 +4,7 @@ import com.BillingApp.Exceptions.CouldNotWriteUsersException;
 import com.BillingApp.Main;
 import com.BillingApp.Model.Admin;
 import com.BillingApp.Model.Movie;
+import com.BillingApp.Model.Seat;
 import com.BillingApp.Services.AdminService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

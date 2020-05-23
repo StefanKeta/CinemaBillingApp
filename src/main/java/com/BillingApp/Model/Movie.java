@@ -1,6 +1,8 @@
 package com.BillingApp.Model;
 
 
+import javafx.collections.FXCollections;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +16,7 @@ public class Movie {
     private String startDate;
     private String endDate;
     private List<String> times =new ArrayList<String>();
+    private List<Seat> seats= new ArrayList<>();
 
     public Movie(){
     }
@@ -27,6 +30,9 @@ public class Movie {
         this.startDate=startDate;
         this.endDate=endDate;
         this.times=times;
+        for(char c = 'A' ;c<'C';c++)
+            for(int i=1;i<=6;i++)
+                seats.add(new Seat(c,i));
     }
 
     public String getName() {
@@ -101,5 +107,17 @@ public class Movie {
                 duration + '\t'  +
                  price
                 ;
+    }
+
+    public List<Seat> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
+    }
+
+    public void addSeats(Seat seat){
+        seats.add(seat);
     }
 }

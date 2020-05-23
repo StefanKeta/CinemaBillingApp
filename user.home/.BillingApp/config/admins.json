@@ -3,21 +3,87 @@
   "cinemaName" : "Cinema City",
   "email" : "alexandra@mail.com",
   "password" : "����\u0003/P�a��ocB�:����QO�\u0000��(Ы�\u0010_��S\u0005��XD�\u0014�a�Ց^��͆e�[�\u0000;���i�",
-  "movieList" : [ ]
+  "movieList" : [ ],
+  "bookings" : [ ]
 }, {
   "city" : "Timisoara",
   "cinemaName" : "Stefan Cinema",
   "email" : "stefanketa@mail.com",
   "password" : "����j�_t\u000EDw�g�|b\f�d�^���Z�\u001E6�C[��,T \r!X�p-�eH\r\u001B�9X�\u0007�f�ȷh\u000Fl�~=",
   "movieList" : [ {
-    "name" : "Stefan1",
-    "duration" : "01:30:00",
-    "description" : "Test",
-    "price" : 15.15,
-    "trailer" : "https://stackoverflow.com/questions/24202337/javafx-open-url-in-chrome-browser",
-    "startDate" : "2020-05-04",
-    "endDate" : "2020-05-26",
-    "times" : [ "01:00", "13:00", "14:00" ]
+    "name" : "Stefan",
+    "duration" : "03.03",
+    "description" : "",
+    "price" : 30.0,
+    "trailer" : "trailer",
+    "startDate" : "2020-05-22",
+    "endDate" : "2020-05-04",
+    "times" : [ "21:30", "23:00" ],
+    "seats" : [ {
+      "row" : "A",
+      "column" : 1
+    }, {
+      "row" : "A",
+      "column" : 2
+    }, {
+      "row" : "A",
+      "column" : 3
+    }, {
+      "row" : "A",
+      "column" : 4
+    }, {
+      "row" : "A",
+      "column" : 5
+    }, {
+      "row" : "A",
+      "column" : 6
+    }, {
+      "row" : "B",
+      "column" : 1
+    }, {
+      "row" : "B",
+      "column" : 2
+    }, {
+      "row" : "B",
+      "column" : 3
+    }, {
+      "row" : "B",
+      "column" : 4
+    }, {
+      "row" : "B",
+      "column" : 5
+    }, {
+      "row" : "B",
+      "column" : 6
+    } ]
+  } ],
+  "bookings" : [ {
+    "movieName" : "Stefan",
+    "date" : "2020-05-23",
+    "hour" : "21:30",
+    "seat" : {
+      "row" : "A",
+      "column" : 1
+    },
+    "price" : 0.0
+  }, {
+    "movieName" : "Stefan",
+    "date" : "2020-05-23",
+    "hour" : "23:00",
+    "seat" : {
+      "row" : "A",
+      "column" : 1
+    },
+    "price" : 0.0
+  }, {
+    "movieName" : "Stefan",
+    "date" : "2020-05-23",
+    "hour" : "21:30",
+    "seat" : {
+      "row" : "A",
+      "column" : 2
+    },
+    "price" : 30.0
   } ]
 }, {
   "city" : "Timisoara",
@@ -32,7 +98,8 @@
     "trailer" : "Trailer",
     "startDate" : "2020-05-06",
     "endDate" : "2020-05-13",
-    "times" : [ "13:00", "15:00", "16:00" ]
+    "times" : [ "13:00", "15:00", "16:00" ],
+    "seats" : [ ]
   }, {
     "name" : "Movie2",
     "duration" : "01:30:00",
@@ -41,12 +108,15 @@
     "trailer" : "Movie",
     "startDate" : null,
     "endDate" : "2020-05-13",
-    "times" : [ "20:00", "12:00", "11:00" ]
-  } ]
+    "times" : [ "20:00", "12:00", "11:00" ],
+    "seats" : [ ]
+  } ],
+  "bookings" : [ ]
 }, {
   "city" : "Resita",
   "cinemaName" : "Alexandra Cinema",
   "email" : "alexandrag@mail.com",
   "password" : "p?�(��}~>��\u001DQ_�\u0003B�\u0016��\u0007�.%��C<lL�k\n?4��6+\u001E:eh�QR�^���-\u0004\u0016�\n�\u0015�~��",
-  "movieList" : [ ]
+  "movieList" : [ ],
+  "bookings" : [ ]
 } ]

@@ -65,7 +65,9 @@
       "row" : "A",
       "column" : 1
     },
-    "price" : 0.0
+    "price" : 0.0,
+    "client" : null,
+    "sendViaMail" : false
   }, {
     "movieName" : "Stefan",
     "date" : "2020-05-23",
@@ -74,7 +76,9 @@
       "row" : "A",
       "column" : 1
     },
-    "price" : 0.0
+    "price" : 0.0,
+    "client" : null,
+    "sendViaMail" : false
   }, {
     "movieName" : "Stefan",
     "date" : "2020-05-23",
@@ -83,7 +87,20 @@
       "row" : "A",
       "column" : 2
     },
-    "price" : 30.0
+    "price" : 30.0,
+    "client" : null,
+    "sendViaMail" : false
+  }, {
+    "movieName" : "Stefan",
+    "date" : "2020-05-23",
+    "hour" : "21:30",
+    "seat" : {
+      "row" : "B",
+      "column" : 2
+    },
+    "price" : 30.0,
+    "client" : "stefank@mail.com",
+    "sendViaMail" : true
   } ]
 }, {
   "city" : "Timisoara",

@@ -73,6 +73,14 @@ public class Booking {
         this.client = client;
     }
 
+    public boolean isSendViaMail() {
+        return sendViaMail;
+    }
+
+    public void setSendViaMail(boolean sendViaMail) {
+        this.sendViaMail = sendViaMail;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
@@ -82,6 +90,7 @@ public class Booking {
                 ", seat=" + seat +
                 ", price=" + price +
                 ", client='" + client + '\'' +
+                ", sendViaMail=" + sendViaMail +
                 '}';
     }
 }

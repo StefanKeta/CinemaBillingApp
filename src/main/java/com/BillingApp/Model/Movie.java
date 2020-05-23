@@ -4,7 +4,6 @@ package com.BillingApp.Model;
 import javafx.collections.FXCollections;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Movie {

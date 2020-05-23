@@ -54,8 +54,12 @@ public class ClientSelectMovieController implements Initializable {
         stage.show();
     }
 
-    public void onBookClick(ActionEvent event){
-        //TO-DO
+    public void onBookClick(ActionEvent event) throws IOException {
+        Stage stage= (Stage) listView.getScene().getWindow();
+        Parent root= FXMLLoader.load(getClass().getResource("/PaymentScreen.fxml"));
+        Scene scene = new Scene(root, 600,400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static Movie getSelectedMovie() {

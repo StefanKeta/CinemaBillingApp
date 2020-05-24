@@ -1,6 +1,7 @@
 package com.BillingApp.Model;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Booking {
     private String movieName;
@@ -92,5 +93,12 @@ public class Booking {
                 ", client='" + client + '\'' +
                 ", sendViaMail=" + sendViaMail +
                 '}';
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(movieName, date, hour, seat, price, client, sendViaMail);
     }
 }

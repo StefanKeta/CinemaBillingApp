@@ -101,6 +101,17 @@
     "price" : 30.0,
     "client" : "stefank@mail.com",
     "sendViaMail" : true
+  }, {
+    "movieName" : "Stefan",
+    "date" : "2020-05-23",
+    "hour" : "23:00",
+    "seat" : {
+      "row" : "A",
+      "column" : 4
+    },
+    "price" : 30.0,
+    "client" : "stefanketa99@gmail.com",
+    "sendViaMail" : true
   } ]
 }, {
   "city" : "Timisoara",

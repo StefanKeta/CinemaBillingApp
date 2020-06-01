@@ -34,7 +34,11 @@ public class AdminController implements Initializable {
 
     }
 
-    public void onBuyingRequests(ActionEvent event){
-
+    public void onBuyingRequests(ActionEvent event) throws IOException {
+        Stage stage = (Stage) welcomeLabel.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/AdminSeeRequests.fxml"));
+        Scene scene = new Scene(root,600,400);
+        stage.setScene(scene);
+        stage.show();
     }
 }

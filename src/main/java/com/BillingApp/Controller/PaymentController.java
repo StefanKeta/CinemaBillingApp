@@ -47,8 +47,6 @@ public class PaymentController implements Initializable {
                 for(Booking booking : ClientModeController.getSelectedCinema().getBookings()){
                     if(hours.getSelectionModel().getSelectedItem().equals(booking.getHour())&&booking.getDate().equals(datePicker.getValue().toString()))
                         unavailableSeats.add(booking.getSeat());
-                    for(Seat seat : unavailableSeats)
-                        System.out.println(seat);;
                 }
                 for(Iterator<Seat> iterator= availableSeats.iterator();iterator.hasNext();) {
                     Seat seat = iterator.next();

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.PaymentController">
+   <children>
+      <ImageView fx:id="seatView" fitHeight="233.0" fitWidth="530.0" layoutX="65.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="cardText" layoutX="430.0" layoutY="278.0" prefHeight="26.0" prefWidth="158.0" promptText="Enter 12-digit card number" />
+      <ChoiceBox fx:id="seats" layoutX="269.0" layoutY="279.0" prefWidth="150.0" />
+      <Label fx:id="seatBox" layoutX="269.0" layoutY="252.0" text="Enter your seat" />
+      <Button layoutX="479.0" layoutY="332.0" mnemonicParsing="false" onAction="#onBookClick" text="Book now!" />
+      <DatePicker fx:id="datePicker" layoutX="38.0" layoutY="278.0" prefHeight="26.0" prefWidth="107.0" promptText="Enter date" />
+      <Label layoutX="38.0" layoutY="252.0" text="Enter date" />
+      <Label fx:id="errorLabel" layoutX="321.0" layoutY="336.0" />
+      <ChoiceBox fx:id="hours" layoutX="150.0" layoutY="279.0" prefHeight="26.0" prefWidth="107.0" />
+      <Label layoutX="150.0" layoutY="252.0" text="Enter hours" />
+      <CheckBox fx:id="sendViaMail" layoutX="55.0" layoutY="336.0" mnemonicParsing="false" text="Send ticket via mail" />
+   </children>
+</AnchorPane>

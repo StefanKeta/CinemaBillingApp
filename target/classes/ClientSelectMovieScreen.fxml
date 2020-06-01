@@ -9,9 +9,9 @@
    <children>
       <Button layoutX="14.0" layoutY="62.0" mnemonicParsing="false" text="Contact admin" />
       <Button layoutX="151.0" layoutY="351.0" mnemonicParsing="false" onAction="#onSeeDetailsClick" text="See details" />
-      <Button layoutX="332.0" layoutY="351.0" mnemonicParsing="false" text="Book tickets!" />
       <ListView fx:id="listView" layoutX="151.0" layoutY="27.0" prefHeight="302.0" prefWidth="361.0" />
       <Label fx:id="noMovie" layoutX="444.0" layoutY="355.0" />
       <Button layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#onBackClick" prefHeight="26.0" prefWidth="94.0" text="Back" />
+      <Button layoutX="439.0" layoutY="350.0" mnemonicParsing="false" onAction="#onBookClick" prefHeight="26.0" prefWidth="73.0" text="Book now!" />
    </children>
 </AnchorPane>

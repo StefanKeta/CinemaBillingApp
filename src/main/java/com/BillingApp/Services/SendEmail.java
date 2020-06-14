@@ -1,5 +1,8 @@
 package com.BillingApp.Services;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -57,6 +60,12 @@ public class SendEmail {
             }
             Transport.send(message);
             System.out.println("Done");
+            Alert alert = new Alert(Alert.AlertType.NONE, "Successfully sent", ButtonType.CLOSE);
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.CLOSE) {
+                alert.close();
+            }
 
         } catch (MessagingException e) {
             e.printStackTrace();

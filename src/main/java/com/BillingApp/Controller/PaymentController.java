@@ -90,6 +90,9 @@ public class PaymentController implements Initializable {
         if (input.getText().equals("MOVIE30")){
             finalPrice.setText(String.valueOf(price - 30.0/100.0* price));
         }
+        if (!input.getText().equals("")) {
+            badCode.setText("The voucher code used is unavailable");
+        }
     }
 
     public void onBookClick(ActionEvent event){

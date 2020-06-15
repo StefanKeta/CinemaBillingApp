@@ -75,6 +75,33 @@ public class AdminSeeRequestsController implements Initializable {
         desktop.open(FILE);
     }
 
+    public void onSendClick(ActionEvent actionEvent) throws IOException {
+        Booking cerere = bookings.getSelectionModel().getSelectedItem();
+        if(!cerere.isSendViaMail()){
+            String text= "This is a booking confirmation. Please make sure you pick up your tickets at the cinema.";
+            Alert alert = new Alert(Alert.AlertType.NONE, "Client didn't requested e-ticket. He will only be noticed that the booking is available", ButtonType.OK);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.OK) {
+                alert.close();
+                SendEmail.sendEmail(cerere.getClient(),"no-ticket",text,null);
+            }
+        }
+        else
+        {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Open Resource File");
+            Stage stage = new Stage();
+            File newFile = fileChooser.showOpenDialog(stage);
+            if (newFile != null) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.open(newFile);
+                SendEmail.sendEmail(cerere.getClient(), "e-ticket", "", newFile.getPath());
+            } else {
+                System.out.println("error");
+            }
+        }
+    }
+
     /*public void onAcceptClick(ActionEvent event) throws  Exception{
         bookings.getItems().remove(bookings.getSelectionModel().getSelectedItem());
     }*/

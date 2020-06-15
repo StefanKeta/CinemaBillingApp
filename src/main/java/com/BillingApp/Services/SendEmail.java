@@ -54,6 +54,11 @@ public class SendEmail {
                 multipart.addBodyPart(messageBodyPart);
                 message.setContent(multipart );
             }
+            else
+            if (type.equals("no-ticket")){
+                message.setSubject("Booking confirmation");
+                message.setText(text);
+            }
             else {
                 message.setSubject("Feedback from client");
                 message.setText(text);

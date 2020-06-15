@@ -5,9 +5,9 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.ClientSelectMovieController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.ClientSelectMovieController">
    <children>
-      <Button layoutX="14.0" layoutY="62.0" mnemonicParsing="false" text="Contact admin" />
+      <Button fx:id="contact" layoutX="14.0" layoutY="62.0" mnemonicParsing="false" onAction="#onContactClick" text="Contact admin" />
       <Button layoutX="151.0" layoutY="351.0" mnemonicParsing="false" onAction="#onSeeDetailsClick" text="See details" />
       <ListView fx:id="listView" layoutX="151.0" layoutY="27.0" prefHeight="302.0" prefWidth="361.0" />
       <Label fx:id="noMovie" layoutX="444.0" layoutY="355.0" />

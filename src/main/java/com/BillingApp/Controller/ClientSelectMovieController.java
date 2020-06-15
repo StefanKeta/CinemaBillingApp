@@ -7,10 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +17,8 @@ import java.util.ResourceBundle;
 public class ClientSelectMovieController implements Initializable {
     @FXML private ListView<Movie> listView = new ListView<>();
     @FXML private Label noMovie;
+    @FXML
+    private Button contact;
 
     private static Movie selectedMovie;
 
@@ -36,8 +35,13 @@ public class ClientSelectMovieController implements Initializable {
         stage.show();
     }
 
-    public void onContactClick(ActionEvent event){
-        //TO-DO
+    public void onContactClick(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root= FXMLLoader.load(getClass().getResource("/Contact.fxml"));
+        Scene scene = new Scene(root,600,450);
+        stage.setScene(scene);
+        stage.setTitle("Contact section");
+        stage.show();
     }
 
     public void onSeeDetailsClick(ActionEvent event) throws IOException {

@@ -55,13 +55,14 @@ public class AdminSeeRequestsController implements Initializable {
 
     public void onAcceptClick(ActionEvent event) throws  Exception{
         Booking toAccept = bookings.getSelectionModel().getSelectedItem();
-        String ticket = toAccept.getMovieName() + "\n"+ toAccept.getDate()+"\n" +toAccept.getHour()+'\n'+toAccept.getSeat()+'\n'+ toAccept.hashCode();
+        System.out.println(toAccept);
+        /*String ticket = toAccept.getMovieName() + "\n"+ toAccept.getDate()+"\n" +toAccept.getHour()+'\n'+toAccept.getSeat()+'\n'+ toAccept.hashCode();
         if(!toAccept.isSendViaMail()){
             sendMail(toAccept.getClient(),Main.getCurrentAdmin().getEmail(),"Hello, you can pick up your tickets at the cinema");
         }
         if(toAccept.isSendViaMail()){
             sendMail(toAccept.getClient(),Main.getCurrentAdmin().getEmail(),ticket);
-        }
+        }*/
         bookings.getItems().remove(bookings.getSelectionModel().getSelectedItem());
     }
 

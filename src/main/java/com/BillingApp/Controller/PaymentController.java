@@ -73,6 +73,12 @@ public class PaymentController implements Initializable {
 
     @FXML
     void onVoucherClick(ActionEvent event) {
+        double price = ClientSelectMovieController.getSelectedMovie().getPrice();
+        TextInputDialog cod = new TextInputDialog();
+        cod.setHeaderText("Voucher Section");
+        cod.getDialogPane().setContentText("Type your voucher code: ");
+        cod.getDialogPane().lookupButton(ButtonType.CANCEL).setDisable(true);
+        Optional<String> result = cod.showAndWait();
     }
 
     public void onBookClick(ActionEvent event){

@@ -79,6 +79,17 @@ public class PaymentController implements Initializable {
         cod.getDialogPane().setContentText("Type your voucher code: ");
         cod.getDialogPane().lookupButton(ButtonType.CANCEL).setDisable(true);
         Optional<String> result = cod.showAndWait();
+        TextField input = cod.getEditor();
+        if (input.getText().equals("MOVIE20"))
+            finalPrice.setText(String.valueOf(price - 20.0/100.0* price));
+        else
+        if (input.getText().equals("MOVIE25")) {
+            finalPrice.setText(String.valueOf(price - 25.0/100.0* price));
+        }
+        else
+        if (input.getText().equals("MOVIE30")){
+            finalPrice.setText(String.valueOf(price - 30.0/100.0* price));
+        }
     }
 
     public void onBookClick(ActionEvent event){

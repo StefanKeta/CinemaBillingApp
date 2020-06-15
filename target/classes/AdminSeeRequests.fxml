@@ -5,19 +5,19 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.AdminSeeRequestsController">
-   <children>
-      <TableView fx:id="bookings" layoutX="44.0" layoutY="14.0" prefHeight="326.0" prefWidth="512.0">
-        <columns>
-          <TableColumn fx:id="client" prefWidth="75.0" text="Client" />
-          <TableColumn fx:id="movie" prefWidth="107.20001220703125" text="Movie Name" />
-            <TableColumn fx:id="date" prefWidth="102.4000244140625" text="Date" />
-            <TableColumn fx:id="send" prefWidth="75.0" text="SendViaMail" />
-            <TableColumn fx:id="seat" prefWidth="75.0" text="Seat" />
-            <TableColumn fx:id="hour" prefWidth="75.0" text="Hour" />
-        </columns>
-      </TableView>
-      <Button layoutX="420.0" layoutY="353.0" mnemonicParsing="false" onAction="#onAcceptClick" text="Accept" />
-      <Button layoutX="116.0" layoutY="353.0" mnemonicParsing="false" onAction="#onDeleteClick" text="Delete" />
-   </children>
+<AnchorPane prefHeight="534.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.AdminSeeRequestsController">
+    <children>
+        <TableView fx:id="bookings" layoutX="31.0" layoutY="21.0" prefHeight="398.0" prefWidth="616.0">
+            <columns>
+                <TableColumn fx:id="client" prefWidth="140.0" text="Client" />
+                <TableColumn fx:id="movie" prefWidth="140.0" text="Movie Name" />
+                <TableColumn fx:id="date" prefWidth="92.0" text="Date" />
+                <TableColumn fx:id="send" prefWidth="104.0" text="SendViaMail" />
+                <TableColumn fx:id="seat" prefWidth="68.0" text="Seat" />
+                <TableColumn fx:id="hour" prefWidth="71.0" text="Hour" />
+            </columns>
+        </TableView>
+        <Button layoutX="378.0" layoutY="451.0" mnemonicParsing="false" onAction="#onGenerateClick" prefHeight="46.0" prefWidth="98.0" text="Generate &#10; e-ticket" />
+        <Button layoutX="514.0" layoutY="451.0" mnemonicParsing="false" onAction="#onSendClick" prefHeight="46.0" prefWidth="98.0" text="Send tickets" />
+    </children>
 </AnchorPane>

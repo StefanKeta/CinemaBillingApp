@@ -4,6 +4,7 @@ package com.BillingApp.Controller;
 import com.BillingApp.Main;
 import com.BillingApp.Model.Admin;
 import com.BillingApp.Model.Booking;
+import com.BillingApp.Model.Client;
 import com.BillingApp.Model.Seat;
 import com.BillingApp.Services.AdminService;
 import javafx.event.ActionEvent;
@@ -14,10 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class PaymentController implements Initializable {
     @FXML private ImageView seatView;
@@ -27,11 +25,18 @@ public class PaymentController implements Initializable {
     @FXML private TextField cardText;
     @FXML private Label errorLabel;
     @FXML private CheckBox sendViaMail;
+    @FXML private TextField total;
+    @FXML private Button voucher;
+    @FXML private TextField finalPrice;
+    @FXML private Label badCode;
+
     private Seat selectedSeat;
     private List<Seat> availableSeats=new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        total.setText(String.valueOf(ClientSelectMovieController.getSelectedMovie().getPrice()));
+        finalPrice.setText(total.getText());
         sendViaMail.setSelected(false);
         List<Seat> unavailableSeats= new ArrayList<>();
         Image image= new Image("/seats.JPG");
@@ -54,18 +59,41 @@ public class PaymentController implements Initializable {
                         if (seat.equals(seat1))
                             iterator.remove();
                 }
-                    seats.getItems().addAll(availableSeats);
+                seats.getItems().addAll(availableSeats);
 
             }
         });
-
         seats.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 selectedSeat = seats.getSelectionModel().getSelectedItem();
             }
         });
+    }
 
+    @FXML
+    void onVoucherClick(ActionEvent event) {
+        double price = ClientSelectMovieController.getSelectedMovie().getPrice();
+        TextInputDialog cod = new TextInputDialog();
+        cod.setHeaderText("Voucher Section");
+        cod.getDialogPane().setContentText("Type your voucher code: ");
+        cod.getDialogPane().lookupButton(ButtonType.CANCEL).setDisable(true);
+        Optional<String> result = cod.showAndWait();
+        TextField input = cod.getEditor();
+        if (input.getText().equals("MOVIE20"))
+            finalPrice.setText(String.valueOf(price - 20.0/100.0* price));
+        else
+        if (input.getText().equals("MOVIE25")) {
+            finalPrice.setText(String.valueOf(price - 25.0/100.0* price));
+        }
+        else
+        if (input.getText().equals("MOVIE30")){
+            finalPrice.setText(String.valueOf(price - 30.0/100.0* price));
+        }
+        else
+        if (!input.getText().equals("")) {
+            badCode.setText("The voucher code used is unavailable");
+        }
     }
 
     public void onBookClick(ActionEvent event){
@@ -82,8 +110,5 @@ public class PaymentController implements Initializable {
         errorLabel.setText("Booking successful!");
 
     }
-
-
-
 }
 

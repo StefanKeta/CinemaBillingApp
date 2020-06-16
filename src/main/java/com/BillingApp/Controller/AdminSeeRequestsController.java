@@ -2,25 +2,29 @@ package com.BillingApp.Controller;
 
 import com.BillingApp.Main;
 import com.BillingApp.Model.Booking;
+import com.BillingApp.Model.PDF;
 import com.BillingApp.Model.Seat;
-import com.BillingApp.Services.AdminService;
+import com.BillingApp.Services.SendEmail;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfWriter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.io.UnsupportedEncodingException;
+import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
-import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class AdminSeeRequestsController implements Initializable {
@@ -43,33 +47,63 @@ public class AdminSeeRequestsController implements Initializable {
         bookings.getItems().addAll(Main.getCurrentAdmin().getBookings());
     }
 
-    public void onDeleteClick(ActionEvent event) throws Exception{
-        String message = "Your booking has been rejected";
-        Booking toDelete= bookings.getSelectionModel().getSelectedItem();
-        if(!bookings.getSelectionModel().isEmpty()) {
-            sendMail(toDelete.getClient(),Main.getCurrentAdmin().getEmail(),message);
-            bookings.getItems().remove(bookings.getSelectionModel().getSelectedItem());
+    public void onGenerateClick(ActionEvent actionEvent) throws DocumentException, IOException {
+        Desktop desktop = Desktop.getDesktop();
+        Booking cerere = bookings.getSelectionModel().getSelectedItem();
+        String text =
+                "Film: " + cerere.getMovieName() + "\n" +
+                        cerere.getDate() + "\n" +
+                        cerere.getHour() + '\n' +
+                        cerere.getSeat() + '\n' +
+                        cerere.hashCode();
+        Document document = new Document();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save your PDF File");
+        Stage stage = new Stage();
+        File FILE = fileChooser.showSaveDialog(stage);
+        if (FILE != null) {
+            try {
+                PdfWriter.getInstance(document, new FileOutputStream(FILE));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            document.open();
+            PDF.addMetaData(document);
+            PDF.addPage(document, text);
+            document.close();
         }
-        AdminService.persistAdmins();
+        desktop.open(FILE);
     }
 
-    public void onAcceptClick(ActionEvent event) throws  Exception{
-        Booking toAccept = bookings.getSelectionModel().getSelectedItem();
-        System.out.println(toAccept);
-        /*String ticket = toAccept.getMovieName() + "\n"+ toAccept.getDate()+"\n" +toAccept.getHour()+'\n'+toAccept.getSeat()+'\n'+ toAccept.hashCode();
-        if(!toAccept.isSendViaMail()){
-            sendMail(toAccept.getClient(),Main.getCurrentAdmin().getEmail(),"Hello, you can pick up your tickets at the cinema");
+    public void onSendClick(ActionEvent actionEvent) throws IOException {
+        Booking cerere = bookings.getSelectionModel().getSelectedItem();
+        if(!cerere.isSendViaMail()){
+            String text= "This is a booking confirmation. Please make sure you pick up your tickets at the cinema.";
+            Alert alert = new Alert(Alert.AlertType.NONE, "Client didn't requested e-ticket. He will only be noticed that the booking is available", ButtonType.OK);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.OK) {
+                alert.close();
+                SendEmail.sendEmail(cerere.getClient(),"no-ticket",text,null);
+            }
         }
-        if(toAccept.isSendViaMail()){
-            sendMail(toAccept.getClient(),Main.getCurrentAdmin().getEmail(),ticket);
-        }*/
+        else
+        {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Open Resource File");
+            Stage stage = new Stage();
+            File newFile = fileChooser.showOpenDialog(stage);
+            if (newFile != null) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.open(newFile);
+                SendEmail.sendEmail(cerere.getClient(), "e-ticket", "", newFile.getPath());
+            } else {
+                System.out.println("error");
+            }
+        }
+    }
+
+    /*public void onAcceptClick(ActionEvent event) throws  Exception{
         bookings.getItems().remove(bookings.getSelectionModel().getSelectedItem());
-    }
-
-    private static void sendMail(String recipient,String from,String messageToSend) throws Exception{
-        //TODO
-        }
-
-
+    }*/
 }
 

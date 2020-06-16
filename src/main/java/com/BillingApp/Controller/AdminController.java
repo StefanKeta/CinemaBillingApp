@@ -30,8 +30,12 @@ public class AdminController implements Initializable {
         stage.show();
     }
 
-    public void onStatistics(ActionEvent event){
-
+    public void onStatistics(ActionEvent event) throws IOException {
+        Stage stage = (Stage)welcomeLabel.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/Statistics.fxml"));
+        Scene scene= new Scene(root,700,500);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void onBuyingRequests(ActionEvent event) throws IOException {

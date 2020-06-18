@@ -21,7 +21,7 @@ public class Main extends Application {
         AdminService.loadAdmins();
         Parent root= FXMLLoader.load(getClass().getResource("/RegistrationScreen.fxml"));
         primaryStage.setTitle("Cinema Billing App");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 750, 500));
         primaryStage.show();
     }
 

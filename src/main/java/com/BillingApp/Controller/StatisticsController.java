@@ -4,11 +4,19 @@ import com.BillingApp.Model.Admin;
 import com.BillingApp.Model.Booking;
 import com.BillingApp.Model.Movie;
 import com.BillingApp.Services.AdminService;
+import javafx.embed.swing.JFXPanel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.TextField;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
+
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.List;
@@ -24,6 +32,15 @@ public class StatisticsController implements Initializable {
     double sum=0;
 
     public List<String> names = new ArrayList<>();
+
+    @FXML
+    void onBackClick(ActionEvent event) throws IOException {
+        Stage stage = (Stage)income.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/AdminMode.fxml"));
+        Scene scene= new Scene(root,750,500);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public void readBookings() throws FileNotFoundException{
             for (Admin admin : AdminService.getAdminList())

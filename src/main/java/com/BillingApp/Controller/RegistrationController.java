@@ -83,7 +83,7 @@ public class RegistrationController implements Initializable {
 
         Stage stage =(Stage)email.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
-        stage.setScene(new Scene(root,600,400));
+        stage.setScene(new Scene(root,750,500));
         stage.show();
 
     }
@@ -91,7 +91,7 @@ public class RegistrationController implements Initializable {
     public void onSignInClick(ActionEvent event) throws  IOException{
         Stage stage =(Stage)email.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
-        stage.setScene(new Scene(root,600,400));
+        stage.setScene(new Scene(root,750,500));
         stage.show();
     }
 

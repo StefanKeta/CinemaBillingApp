@@ -7,25 +7,25 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.AdminEditController">
+<AnchorPane prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #F5DEB3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.BillingApp.Controller.AdminEditController">
    <children>
-      <Label layoutX="72.0" layoutY="41.0" text="Edit title" />
-      <Label layoutX="70.0" layoutY="100.0" text="Edit duration" />
-      <Label layoutX="69.0" layoutY="153.0" text="Edit trailer" />
-      <Label layoutX="69.0" layoutY="200.0" text="Edit price" />
-      <Label layoutX="70.0" layoutY="250.0" text="Edit date" />
-      <Label layoutX="363.0" layoutY="41.0" text="Edit description" />
-      <TextField fx:id="times" layoutX="65.0" layoutY="338.0" promptText="hh:mm,hh:mm,hh:mm" />
-      <Label layoutX="70.0" layoutY="308.0" text="Edit time" />
-      <DatePicker fx:id="fromDate" layoutX="65.0" layoutY="274.0" prefHeight="26.0" prefWidth="69.0" />
-      <TextField fx:id="title" layoutX="72.0" layoutY="66.0" />
-      <TextField fx:id="duration" layoutX="71.0" layoutY="126.0" prefHeight="26.0" prefWidth="149.0" promptText="hh:mm:ss" />
-      <TextField fx:id="price" layoutX="71.0" layoutY="223.0" prefHeight="26.0" prefWidth="149.0" />
-      <TextField fx:id="trailer" layoutX="71.0" layoutY="173.0" prefHeight="26.0" prefWidth="149.0" />
-      <TextArea fx:id="description" layoutX="332.0" layoutY="73.0" prefHeight="262.0" prefWidth="200.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackClick" text="Back" />
-      <Button layoutX="264.0" layoutY="351.0" mnemonicParsing="false" onAction="#onEditMovieClick" text="Edit Movie" />
-      <Label fx:id="movieEdited" layoutX="390.0" layoutY="355.0" />
-      <DatePicker fx:id="toDate" layoutX="151.0" layoutY="274.0" prefHeight="26.0" prefWidth="70.0" />
+      <Label layoutX="67.0" layoutY="50.0" text="Edit title" />
+      <Label layoutX="69.0" layoutY="118.0" text="Edit duration" />
+      <Label layoutX="67.0" layoutY="186.0" text="Edit trailer" />
+      <Label layoutX="69.0" layoutY="250.0" text="Edit price" />
+      <Label layoutX="71.0" layoutY="317.0" text="Edit date" />
+      <Label layoutX="413.0" layoutY="58.0" text="Edit description" />
+      <TextField fx:id="times" layoutX="96.0" layoutY="412.0" prefHeight="17.0" prefWidth="188.0" promptText="hh:mm, hh:mm, hh:mm" />
+      <Label layoutX="71.0" layoutY="383.0" text="Edit time" />
+      <DatePicker fx:id="fromDate" layoutX="94.0" layoutY="347.0" prefHeight="26.0" prefWidth="125.0" />
+      <TextField fx:id="title" layoutX="96.0" layoutY="79.0" />
+      <TextField fx:id="duration" layoutX="96.0" layoutY="147.0" prefHeight="26.0" prefWidth="149.0" promptText="hh:mm:ss" />
+      <TextField fx:id="price" layoutX="96.0" layoutY="282.0" prefHeight="26.0" prefWidth="149.0" />
+      <TextField fx:id="trailer" layoutX="96.0" layoutY="219.0" prefHeight="26.0" prefWidth="149.0" />
+      <TextArea fx:id="description" layoutX="413.0" layoutY="104.0" prefHeight="256.0" prefWidth="271.0" />
+      <Button layoutX="643.0" layoutY="25.0" mnemonicParsing="false" onAction="#onBackClick" text="Back" />
+      <Button layoutX="579.0" layoutY="400.0" mnemonicParsing="false" onAction="#onEditMovieClick" prefHeight="48.0" prefWidth="104.0" text="Edit Movie" />
+      <Label fx:id="movieEdited" layoutX="344.0" layoutY="404.0" prefHeight="41.0" prefWidth="200.0" />
+      <DatePicker fx:id="toDate" layoutX="245.0" layoutY="347.0" prefHeight="26.0" prefWidth="125.0" />
    </children>
 </AnchorPane>

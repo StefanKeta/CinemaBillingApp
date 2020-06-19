@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,12 +23,12 @@ import java.time.Clock;
 import java.util.ResourceBundle;
 
 public class RegistrationController implements Initializable {
-    @FXML private TextField email;
-    @FXML private PasswordField password;
-    @FXML private ChoiceBox choiceBox;
-    @FXML private TextField userDependent1;
-    @FXML private TextField userDependent2;
-    @FXML private Label errorLabel;
+    @FXML  TextField email;
+    @FXML  PasswordField password;
+    @FXML  ChoiceBox choiceBox;
+    @FXML  TextField userDependent1;
+    @FXML  TextField userDependent2;
+    @FXML  Label errorLabel;
 
 
     @Override

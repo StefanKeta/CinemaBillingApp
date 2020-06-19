@@ -24,19 +24,18 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class AdminEditController implements Initializable {
-    @FXML
-    private ListView<Movie> listView = new ListView<>();
-    @FXML private TextField title;
-    @FXML private TextField trailer;
-    @FXML private TextField price;
-    @FXML private TextField duration;
-    @FXML private TextArea description;
-    @FXML private Label movieAdded;
-    @FXML private Label movieEdited;
-    @FXML private DatePicker fromDate;
-    @FXML private DatePicker toDate;
-    @FXML private TextField times;
-    @FXML private Label error;
+    @FXML  ListView<Movie> listView = new ListView<>();
+    @FXML  TextField title;
+    @FXML  TextField trailer;
+    @FXML  TextField price;
+    @FXML  TextField duration;
+    @FXML  TextArea description;
+    @FXML  Label movieAdded;
+    @FXML  Label movieEdited;
+    @FXML  DatePicker fromDate;
+    @FXML  DatePicker toDate;
+    @FXML  TextField times;
+    @FXML  Label error;
 
     private int position;
 

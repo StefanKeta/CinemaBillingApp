@@ -1,1 +1,22 @@
-[  ]
+[ {
+  "city" : "CITY",
+  "cinemaName" : "CINEMA2",
+  "email" : "test3@mail.com",
+  "password" : "U\u001EŤ�&��d�I��7�D\u0015}kU�v�&)<�C��<�?����B�\u001B���tL�W\u0018�j>\u0015�kp܎�J�\u001D�",
+  "movieList" : [ ],
+  "bookings" : [ ]
+}, {
+  "city" : "CITY",
+  "cinemaName" : "CINEMA2",
+  "email" : "test1@mail.com",
+  "password" : "棦�_ZD�L\u0018���>\u0005wjV����X��;<�H;䒕��\b�x�on<\u0018��lf�+\u0007�\u000B\u0000�В�O\u000Et\u001D",
+  "movieList" : [ ],
+  "bookings" : [ ]
+}, {
+  "city" : "CITY",
+  "cinemaName" : "CINEMA",
+  "email" : "test2@mail.com",
+  "password" : "������\u0012\u0012�N���I��ԭ@�J�\u0016kb�\u0007�f*��g��f���/��ڝ�5DR�K��*B\u0004�\u0015�@�\u001D~\u0015�",
+  "movieList" : [ ],
+  "bookings" : [ ]
+} ]

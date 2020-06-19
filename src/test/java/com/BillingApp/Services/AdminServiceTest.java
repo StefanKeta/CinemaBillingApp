@@ -45,6 +45,7 @@ public class AdminServiceTest extends ApplicationTest {
 
     @Test
     public void testAddAdmin() throws IOException, EmailAlreadyExistsException {
+        FileUtils.cleanDirectory(FileService.getApplicationHomePath().toFile());
         AdminService.loadAdmins();
         AdminService.addAdmin("test2@mail.com","password123","CITY","CINEMA");
         assertNotNull(AdminService.getAdminList());
@@ -52,7 +53,8 @@ public class AdminServiceTest extends ApplicationTest {
     }
 
     @Test
-    public void testTwoUsers() throws IOException, EmailAlreadyExistsException {
+    public void testTwoAdmins() throws IOException, EmailAlreadyExistsException {
+        FileUtils.cleanDirectory(FileService.getApplicationHomePath().toFile());
         AdminService.loadAdmins();
         AdminService.addAdmin("test3@mail.com","password123","CITY","CINEMA2");
         AdminService.addAdmin("test1@mail.com","password123","CITY","CINEMA2");
@@ -62,6 +64,7 @@ public class AdminServiceTest extends ApplicationTest {
 
     @Test(expected = EmailAlreadyExistsException.class)
     public void testExist() throws IOException, EmailAlreadyExistsException {
+        FileUtils.cleanDirectory(FileService.getApplicationHomePath().toFile());
         AdminService.loadAdmins();
         AdminService.addAdmin("test3@mail.com","password123","CITY","CINEMA2");
         List<Admin> users = new ObjectMapper().readValue(AdminService.ADMIN_PATH.toFile(), new TypeReference<List<Admin>>() {
@@ -71,7 +74,7 @@ public class AdminServiceTest extends ApplicationTest {
     }
 
     @Test
-    public void testAddTwoUserArePersisted() throws IOException, EmailAlreadyExistsException {
+    public void testAddTwoAdminsArePersisted() throws IOException, EmailAlreadyExistsException {
         AdminService.loadAdmins();
         AdminService.addAdmin("test3@mail.com","password123","CITY","CINEMA2");
         AdminService.addAdmin("test1@mail.com","password123","CITY","CINEMA2");

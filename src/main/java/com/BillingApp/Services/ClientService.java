@@ -17,7 +17,7 @@ import java.util.List;
 
 public class ClientService {
     private static List<Client> clients;
-    private  static final Path CLIENTS_PATH =FileService.getPathToFile("config","clients.json");
+    static final Path CLIENTS_PATH =FileService.getPathToFile("config","clients.json");
 
     public static void loadClients() throws IOException{
         if(!Files.exists(CLIENTS_PATH)){
@@ -36,7 +36,8 @@ public class ClientService {
     }
 
     public static void checkClientDoesNotAlreadyExist(String email) throws EmailAlreadyExistsException {
-        for(Client client:clients){
+        if(clients!=null)
+            for(Client client:clients){
             if(client.getEmail().equals(email))
                 throw new EmailAlreadyExistsException(email);
 

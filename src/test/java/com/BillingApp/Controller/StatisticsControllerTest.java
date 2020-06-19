@@ -44,13 +44,15 @@ public class StatisticsControllerTest extends ApplicationTest {
     }
 
     @Test
-    public void testReadBookings(){
+    public void testReadBookings() throws IOException {
+        AdminService.loadAdmins();
         assertNotNull(AdminService.getAdminList().get(0).getBookings());
     }
 
 
     @Test
-    public void pieChartTest(){
+    public void pieChartTest() throws IOException {
+        AdminService.loadAdmins();
         Movie movie2 = AdminService.getAdminList().get(0).getMovieList().get(0);
         AdminService.getAdminList().get(0).addMovie(movie2);
         Booking booking = AdminService.getAdminList().get(0).getBookings().get(0);

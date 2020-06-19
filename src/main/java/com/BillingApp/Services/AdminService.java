@@ -3,6 +3,7 @@ package com.BillingApp.Services;
 import com.BillingApp.Exceptions.CouldNotWriteUsersException;
 import com.BillingApp.Exceptions.EmailAlreadyExistsException;
 import com.BillingApp.Model.Admin;
+import com.BillingApp.Model.Client;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class AdminService {
     private static List<Admin> admins ;
-    private static  final Path ADMIN_PATH= FileService.getPathToFile("config","admins.json");
+    static  final Path ADMIN_PATH= FileService.getPathToFile("config","admins.json");
 
     public static void loadAdmins() throws IOException{
         if(!Files.exists(ADMIN_PATH)){
@@ -37,7 +38,8 @@ public class AdminService {
     }
 
     public static void checkAdminDoesNotAlreadyExist(String email) throws EmailAlreadyExistsException {
-        for(Admin admin:admins){
+        if(admins!=null)
+            for(Admin admin:admins){
             if(email.equals(admin.getEmail()))
                 throw new EmailAlreadyExistsException(email);
         }

@@ -1,5 +1,6 @@
 package com.BillingApp.Controller;
 
+import com.BillingApp.Exceptions.EmailAlreadyExistsException;
 import com.BillingApp.Services.AdminService;
 import com.BillingApp.Services.ClientService;
 import com.BillingApp.Services.FileService;
@@ -17,6 +18,7 @@ import sun.tools.jar.CommandLine;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import static org.junit.Assert.*;
 
@@ -72,6 +74,7 @@ public class RegistrationControllerTest extends ApplicationTest {
         assertEquals(1, AdminService.getAdminList().size());
         assertEquals("Account Successfully Created!", controller.errorLabel.getText());
     }
+
 
 
 }

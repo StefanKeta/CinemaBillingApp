@@ -30,17 +30,16 @@ public class ClientSelectMovieController implements Initializable {
     public void onBackClick() throws IOException {
         Stage stage= (Stage) listView.getScene().getWindow();
         Parent root= FXMLLoader.load(getClass().getResource("/ClientMode.fxml"));
-        Scene scene = new Scene(root,600,400);
+        Scene scene = new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
     }
 
     public void onContactClick(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root= FXMLLoader.load(getClass().getResource("/Contact.fxml"));
-        Scene scene = new Scene(root,600,450);
+        Stage stage = (Stage)contact.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/Contact.fxml"));
+        Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
-        stage.setTitle("Contact section");
         stage.show();
     }
 
@@ -52,7 +51,7 @@ public class ClientSelectMovieController implements Initializable {
         selectedMovie=listView.getSelectionModel().getSelectedItem();
         Stage stage = new Stage();
         Parent root= FXMLLoader.load(getClass().getResource("/MovieDetailsScreen.fxml"));
-        Scene scene = new Scene(root,400,400);
+        Scene scene = new Scene(root,400,500);
         stage.setScene(scene);
         stage.setTitle("Details");
         stage.show();
@@ -66,7 +65,7 @@ public class ClientSelectMovieController implements Initializable {
         selectedMovie= listView.getSelectionModel().getSelectedItem();
         Stage stage= (Stage) listView.getScene().getWindow();
         Parent root= FXMLLoader.load(getClass().getResource("/PaymentScreen.fxml"));
-        Scene scene = new Scene(root, 600,400);
+        Scene scene = new Scene(root, 750,500);
         stage.setScene(scene);
         stage.show();
     }

@@ -10,7 +10,10 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfWriter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
@@ -36,6 +39,15 @@ public class AdminSeeRequestsController implements Initializable {
     @FXML private TableColumn<Booking, Seat> seat;
     @FXML private TableColumn<Booking,String> hour;
 
+    @FXML
+    void onBackClick(ActionEvent event) throws IOException {
+        Stage stage = (Stage)bookings.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/AdminMode.fxml"));
+        Scene scene= new Scene(root,750,500);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         movie.setCellValueFactory(new PropertyValueFactory<>("movieName"));
@@ -48,31 +60,31 @@ public class AdminSeeRequestsController implements Initializable {
     }
 
     public void onGenerateClick(ActionEvent actionEvent) throws DocumentException, IOException {
-        Desktop desktop = Desktop.getDesktop();
-        Booking cerere = bookings.getSelectionModel().getSelectedItem();
-        String text =
-                "Film: " + cerere.getMovieName() + "\n" +
-                        cerere.getDate() + "\n" +
-                        cerere.getHour() + '\n' +
-                        cerere.getSeat() + '\n' +
-                        cerere.hashCode();
-        Document document = new Document();
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save your PDF File");
-        Stage stage = new Stage();
-        File FILE = fileChooser.showSaveDialog(stage);
-        if (FILE != null) {
-            try {
-                PdfWriter.getInstance(document, new FileOutputStream(FILE));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+            Desktop desktop = Desktop.getDesktop();
+            Booking cerere = bookings.getSelectionModel().getSelectedItem();
+            String text =
+                    "Film: " + cerere.getMovieName() + "\n" +
+                            cerere.getDate() + "\n" +
+                            cerere.getHour() + '\n' +
+                            cerere.getSeat() + '\n' +
+                            cerere.hashCode();
+            Document document = new Document();
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Save your PDF File");
+            Stage stage = new Stage();
+            File FILE = fileChooser.showSaveDialog(stage);
+            if (FILE != null) {
+                try {
+                    PdfWriter.getInstance(document, new FileOutputStream(FILE));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                document.open();
+                PDF.addMetaData(document);
+                PDF.addPage(document, text);
+                document.close();
             }
-            document.open();
-            PDF.addMetaData(document);
-            PDF.addPage(document, text);
-            document.close();
-        }
-        desktop.open(FILE);
+            desktop.open(FILE);
     }
 
     public void onSendClick(ActionEvent actionEvent) throws IOException {

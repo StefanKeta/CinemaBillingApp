@@ -46,7 +46,7 @@ public class LoginController {
                 Main.setCurrentAdmin(admin);
                 Stage stage = (Stage) email.getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("/AdminMode.fxml"));
-                stage.setScene(new Scene(root, 600, 400));
+                stage.setScene(new Scene(root, 750, 500));
                 stage.show();
             }
         for (Client client : ClientService.getClientList())
@@ -55,7 +55,7 @@ public class LoginController {
                 Main.setCurrentClient(client);
                 Stage stage = (Stage) email.getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("/ClientMode.fxml"));
-                stage.setScene(new Scene(root, 600, 400));
+                stage.setScene(new Scene(root, 750, 500));
                 stage.show();
             }
         message.setText("Incorrect password or e-mail");
@@ -80,4 +80,14 @@ public class LoginController {
         }
         return md;
     }
+
+    @FXML
+    void onBackClick(ActionEvent event) throws IOException {
+        Stage stage = (Stage)button.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/RegistrationScreen.fxml"));
+        Scene scene= new Scene(root,750,600);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     }

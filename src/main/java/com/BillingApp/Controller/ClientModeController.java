@@ -82,7 +82,7 @@ public class ClientModeController implements Initializable {
         Stage stage= (Stage) welcomeLabel.getScene().getWindow();
 
         Parent root= FXMLLoader.load(getClass().getResource("/ClientSelectMovieScreen.fxml"));
-        Scene scene= new Scene(root,600,400);
+        Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
     }
@@ -90,7 +90,7 @@ public class ClientModeController implements Initializable {
     public void onLogOut() throws IOException{
         Stage stage= (Stage) city.getScene().getWindow();
         Parent root=FXMLLoader.load(getClass().getResource("/Login.fxml"));
-        Scene scene = new Scene(root,600,400);
+        Scene scene = new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
 

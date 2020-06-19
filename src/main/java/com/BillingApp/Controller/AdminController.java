@@ -22,10 +22,19 @@ public class AdminController implements Initializable {
         welcomeLabel.setText("Welcome, " + Main.getCurrentAdmin().getCinemaName());
     }
 
+    @FXML
+    void onLogOut(ActionEvent event) throws IOException {
+        Stage stage = (Stage)welcomeLabel.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
+        Scene scene= new Scene(root,750,500);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void onEditMovies (ActionEvent event) throws IOException {
         Stage stage = (Stage)welcomeLabel.getScene().getWindow();
         Parent newWindow = FXMLLoader.load(getClass().getResource("/AdminEditMoviesScreen.fxml"));
-        Scene scene= new Scene(newWindow,600,400);
+        Scene scene= new Scene(newWindow,750,500);
         stage.setScene(scene);
         stage.show();
     }
@@ -33,7 +42,7 @@ public class AdminController implements Initializable {
     public void onStatistics(ActionEvent event) throws IOException {
         Stage stage = (Stage)welcomeLabel.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/Statistics.fxml"));
-        Scene scene= new Scene(root,700,500);
+        Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
     }
@@ -41,7 +50,7 @@ public class AdminController implements Initializable {
     public void onBuyingRequests(ActionEvent event) throws IOException {
         Stage stage = (Stage) welcomeLabel.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/AdminSeeRequests.fxml"));
-        Scene scene = new Scene(root,600,400);
+        Scene scene = new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
     }

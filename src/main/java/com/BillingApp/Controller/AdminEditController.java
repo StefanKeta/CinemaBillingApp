@@ -49,7 +49,7 @@ public class AdminEditController implements Initializable {
     public void onBackClick(ActionEvent event) throws IOException{
         Stage stage = (Stage)title.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/AdminEditMoviesScreen.fxml"));
-        Scene scene= new Scene(root,600,400);
+        Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
     }
@@ -57,7 +57,7 @@ public class AdminEditController implements Initializable {
     public void onBack(ActionEvent event) throws IOException {
         Stage stage = (Stage)listView.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/AdminMode.fxml"));
-        Scene scene= new Scene(root,600,400);
+        Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
     }
@@ -77,7 +77,7 @@ public class AdminEditController implements Initializable {
         }
         Stage stage = (Stage)listView.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/EditMovie.fxml"));
-        Scene scene= new Scene(root,600,400);
+        Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
 
@@ -86,7 +86,7 @@ public class AdminEditController implements Initializable {
     public void onAddClick(ActionEvent event) throws IOException{
         Stage stage = (Stage) listView.getScene().getWindow();
         Parent root= FXMLLoader.load(getClass().getResource("/AddMovie.fxml"));
-        Scene scene = new Scene(root,600,400);
+        Scene scene = new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
 

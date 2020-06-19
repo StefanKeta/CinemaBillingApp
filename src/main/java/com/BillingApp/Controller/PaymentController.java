@@ -52,6 +52,8 @@ public class PaymentController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         total.setText(String.valueOf(ClientSelectMovieController.getSelectedMovie().getPrice()));
         finalPrice.setText(total.getText());
+        finalPrice.setEditable(false);
+        total.setEditable(false);
         sendViaMail.setSelected(false);
         List<Seat> unavailableSeats= new ArrayList<>();
         Image image= new Image("/seats.JPG");

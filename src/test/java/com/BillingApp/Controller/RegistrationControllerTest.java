@@ -23,7 +23,8 @@ import static org.junit.Assert.*;
 public class RegistrationControllerTest extends ApplicationTest {
 
     private RegistrationController controller;
-    public static final String EMAIL = "test@mail.com";
+    public static final String CLIENT_EMAIL = "test@mail.com";
+    public static final String ADMIN_EMAIL = "test2@mail.com";
     public static final String PASSWORD = "password123";
 
     @BeforeClass
@@ -47,8 +48,6 @@ public class RegistrationControllerTest extends ApplicationTest {
         controller.choiceBox = new ChoiceBox();
         controller.userDependent2 = new TextField();
         controller.userDependent1 = new TextField();
-
-        controller.email.setText(EMAIL);
         controller.password.setText(PASSWORD);
 
     }
@@ -56,6 +55,7 @@ public class RegistrationControllerTest extends ApplicationTest {
     @Test
     public void testAddClients() throws IOException {
         controller.choiceBox.setValue("Client");
+        controller.email.setText(CLIENT_EMAIL);
         controller.userDependent1.setText("NAME");
         controller.userDependent2.setText("20");
         controller.onRegisterClick(new ActionEvent());
@@ -67,8 +67,9 @@ public class RegistrationControllerTest extends ApplicationTest {
         controller.choiceBox.setValue("Admin");
         controller.userDependent1.setText("CITY");
         controller.userDependent2.setText("CINEMA NAME");
+        controller.email.setText(ADMIN_EMAIL);
         controller.onRegisterClick(new ActionEvent());
-        assertEquals(0, AdminService.getAdminList().size());
+        assertEquals(1, AdminService.getAdminList().size());
         assertEquals("Account Successfully Created!", controller.errorLabel.getText());
     }
 

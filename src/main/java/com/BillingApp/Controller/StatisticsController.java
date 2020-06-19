@@ -24,14 +24,14 @@ import java.util.List;
 import static com.BillingApp.Main.getCurrentAdmin;
 
 public class StatisticsController implements Initializable {
-    @FXML private PieChart pieChart;
-    @FXML private TextField noTickets;
-    @FXML private TextField income;
+    @FXML PieChart pieChart;
+    @FXML TextField noTickets;
+    @FXML TextField income;
 
     int count=0;
     double sum=0;
 
-    public List<String> names = new ArrayList<>();
+     List<String> names = new ArrayList<>();
 
     @FXML
     void onBackClick(ActionEvent event) throws IOException {

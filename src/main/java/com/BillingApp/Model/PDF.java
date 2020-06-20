@@ -13,14 +13,6 @@ public class PDF {
     private static Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.BOLD);
 
-    public static void addMetaData(Document document) {
-        document.addTitle("PDF ticket");
-        document.addSubject("Using iText");
-        document.addKeywords("Java, PDF, iText");
-        document.addAuthor("Cinema App");
-        document.addCreator("Cinema App");
-    }
-
     public static void addPage(Document document, String text)
             throws DocumentException {
         Paragraph continut = new Paragraph();

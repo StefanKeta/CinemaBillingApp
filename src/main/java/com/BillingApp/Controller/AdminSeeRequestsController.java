@@ -80,7 +80,6 @@ public class AdminSeeRequestsController implements Initializable {
                     e.printStackTrace();
                 }
                 document.open();
-                PDF.addMetaData(document);
                 PDF.addPage(document, text);
                 document.close();
             }

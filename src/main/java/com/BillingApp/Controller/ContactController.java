@@ -58,6 +58,7 @@ public class ContactController extends SendEmail {
         else text+=option3.getText();
         text+="\n Comments or questions: \n" + message.getText() + "\n\n";
         sendEmail("ale.goldea@gmail.com","feedback", text,null);
+        SendEmail.showNotification();
         message.clear();
     }
 

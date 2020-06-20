@@ -97,20 +97,21 @@ public class PaymentController implements Initializable {
         cod.getDialogPane().lookupButton(ButtonType.CANCEL).setDisable(true);
         Optional<String> result = cod.showAndWait();
         TextField input = cod.getEditor();
-        if (input.getText().equals("MOVIE20"))
-            finalPrice.setText(String.valueOf(price - 20.0/100.0* price));
+        calculateDiscount(price, input.getText());
+    }
+
+    public void calculateDiscount(double cost, String code){
+        if(code.equals("MOVIE20"))
+            finalPrice.setText(String.valueOf(cost - 20.0/100.0* cost));
         else
-        if (input.getText().equals("MOVIE25")) {
-            finalPrice.setText(String.valueOf(price - 25.0/100.0* price));
-        }
+        if (code.equals("MOVIE25"))
+            finalPrice.setText(String.valueOf(cost - 25.0/100.0* cost));
         else
-        if (input.getText().equals("MOVIE30")){
-            finalPrice.setText(String.valueOf(price - 30.0/100.0* price));
-        }
+        if (code.equals("MOVIE30"))
+            finalPrice.setText(String.valueOf(cost - 30.0/100.0* cost));
         else
-        if (!input.getText().equals("")) {
+        if (code.equals(""))
             badCode.setText("The voucher code used is unavailable");
-        }
     }
 
     public void onBookClick(ActionEvent event){

@@ -65,16 +65,17 @@ public class SendEmail {
             }
             Transport.send(message);
             System.out.println("Done");
-            Alert alert = new Alert(Alert.AlertType.NONE, "Successfully sent", ButtonType.CLOSE);
-            alert.showAndWait();
-
-            if (alert.getResult() == ButtonType.CLOSE) {
-                alert.close();
-            }
-
         } catch (MessagingException e) {
             e.printStackTrace();
         }
     }
 
+    public static void showNotification(){
+        Alert alert = new Alert(Alert.AlertType.NONE, "Successfully sent", ButtonType.CLOSE);
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.CLOSE) {
+            alert.close();
+        }
+    }
 }

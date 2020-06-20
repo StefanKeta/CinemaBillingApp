@@ -65,6 +65,7 @@ public class SendEmail {
             }
             Transport.send(message);
             System.out.println("Done");
+            showNotification();
         } catch (MessagingException e) {
             e.printStackTrace();
         }

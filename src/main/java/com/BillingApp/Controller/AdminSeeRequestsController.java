@@ -31,7 +31,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminSeeRequestsController implements Initializable {
-    @FXML private TableView<Booking> bookings;
+    @FXML
+    protected TableView<Booking> bookings;
     @FXML private TableColumn<Booking, String> movie;
     @FXML private TableColumn<Booking,String> client;
     @FXML private TableColumn<Booking,Boolean> send;

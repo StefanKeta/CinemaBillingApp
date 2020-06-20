@@ -31,9 +31,11 @@ public class PaymentController implements Initializable {
     @FXML private TextField cardText;
     @FXML private Label errorLabel;
     @FXML private CheckBox sendViaMail;
-    @FXML private TextField total;
+    @FXML
+    protected TextField total;
     @FXML private Button voucher;
-    @FXML private TextField finalPrice;
+    @FXML
+    protected TextField finalPrice;
     @FXML private Label badCode;
 
     private Seat selectedSeat;

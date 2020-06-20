@@ -19,4 +19,11 @@
   "password" : "������\u0012\u0012�N���I��ԭ@�J�\u0016kb�\u0007�f*��g��f���/��ڝ�5DR�K��*B\u0004�\u0015�@�\u001D~\u0015�",
   "movieList" : [ ],
   "bookings" : [ ]
+}, {
+  "city" : "CITY",
+  "cinemaName" : "CINEMA_NAME",
+  "email" : "testAdmin@mail.com",
+  "password" : "_��\u00048=�\u0012�\u0010\u0001T\u0006�xR�\nܦ3��\u001B���0��\u0012B\fQ��)HN\u0001�-�����z���V���N�R��\u001F�0",
+  "movieList" : [ ],
+  "bookings" : [ ]
 } ]

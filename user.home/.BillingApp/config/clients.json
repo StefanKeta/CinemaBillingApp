@@ -8,4 +8,19 @@
   "age" : 22,
   "email" : "client5@mail.com",
   "password" : "\u0018**;��0ַ�ʼ~J9�>h�Vq\u000Bi \u0013\u000B��Ӧ�_\u0006g,8���LZ1\u0004ā\u0016�N���� j�'\u0013����!�"
+}, {
+  "name" : "NAME",
+  "age" : 20,
+  "email" : "test@mail.com",
+  "password" : "��\u0018�tQS�\u0005��7B~X��/�R8Z��@��o;���[���-\u001F��g�Icj�\u0007����A{���+����"
+}, {
+  "name" : "Client2",
+  "age" : 21,
+  "email" : "client2@mail.com",
+  "password" : "\u0001�\u001A!d��\u0006rOS=��|F�@Fδ_Tc�F�B}K�\u0013��t�\u001Eu��#\u001C��\u001Aqt\u001C�=��?\u001FP �U�z�(9�"
+}, {
+  "name" : "Client1",
+  "age" : 20,
+  "email" : "client1@mail.com",
+  "password" : "\u0010�Q\u0007�F��&�t�4j\u0003��\u0018\u0003�,cwzա)��^�#,�\u0005�V����ݧ�_N[})����[\u001D�R}2Ңh�"
 } ]

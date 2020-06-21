@@ -15,8 +15,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
-    @FXML private Label welcomeLabel;
-
+    @FXML  Label welcomeLabel;
+            Parent root;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         welcomeLabel.setText("Welcome, " + Main.getCurrentAdmin().getCinemaName());
@@ -25,7 +25,7 @@ public class AdminController implements Initializable {
     @FXML
     void onLogOut(ActionEvent event) throws IOException {
         Stage stage = (Stage)welcomeLabel.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
         Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
@@ -33,15 +33,15 @@ public class AdminController implements Initializable {
 
     public void onEditMovies (ActionEvent event) throws IOException {
         Stage stage = (Stage)welcomeLabel.getScene().getWindow();
-        Parent newWindow = FXMLLoader.load(getClass().getResource("/AdminEditMoviesScreen.fxml"));
-        Scene scene= new Scene(newWindow,750,500);
+        root = FXMLLoader.load(getClass().getResource("/AdminEditMoviesScreen.fxml"));
+        Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
     }
 
     public void onStatistics(ActionEvent event) throws IOException {
         Stage stage = (Stage)welcomeLabel.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/Statistics.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Statistics.fxml"));
         Scene scene= new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
@@ -49,9 +49,10 @@ public class AdminController implements Initializable {
 
     public void onBuyingRequests(ActionEvent event) throws IOException {
         Stage stage = (Stage) welcomeLabel.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/AdminSeeRequests.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/AdminSeeRequests.fxml"));
         Scene scene = new Scene(root,750,500);
         stage.setScene(scene);
         stage.show();
     }
+
 }

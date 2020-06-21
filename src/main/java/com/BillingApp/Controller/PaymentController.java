@@ -31,9 +31,11 @@ public class PaymentController implements Initializable {
     @FXML private TextField cardText;
     @FXML private Label errorLabel;
     @FXML private CheckBox sendViaMail;
-    @FXML private TextField total;
+    @FXML
+    protected TextField total;
     @FXML private Button voucher;
-    @FXML private TextField finalPrice;
+    @FXML
+    protected TextField finalPrice;
     @FXML private Label badCode;
 
     private Seat selectedSeat;
@@ -52,6 +54,8 @@ public class PaymentController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         total.setText(String.valueOf(ClientSelectMovieController.getSelectedMovie().getPrice()));
         finalPrice.setText(total.getText());
+        finalPrice.setEditable(false);
+        total.setEditable(false);
         sendViaMail.setSelected(false);
         List<Seat> unavailableSeats= new ArrayList<>();
         Image image= new Image("/seats.JPG");
@@ -95,20 +99,21 @@ public class PaymentController implements Initializable {
         cod.getDialogPane().lookupButton(ButtonType.CANCEL).setDisable(true);
         Optional<String> result = cod.showAndWait();
         TextField input = cod.getEditor();
-        if (input.getText().equals("MOVIE20"))
-            finalPrice.setText(String.valueOf(price - 20.0/100.0* price));
+        calculateDiscount(price, input.getText());
+    }
+
+    public void calculateDiscount(double cost, String code){
+        if(code.equals("MOVIE20"))
+            finalPrice.setText(String.valueOf(cost - 20.0/100.0* cost));
         else
-        if (input.getText().equals("MOVIE25")) {
-            finalPrice.setText(String.valueOf(price - 25.0/100.0* price));
-        }
+        if (code.equals("MOVIE25"))
+            finalPrice.setText(String.valueOf(cost - 25.0/100.0* cost));
         else
-        if (input.getText().equals("MOVIE30")){
-            finalPrice.setText(String.valueOf(price - 30.0/100.0* price));
-        }
+        if (code.equals("MOVIE30"))
+            finalPrice.setText(String.valueOf(cost - 30.0/100.0* cost));
         else
-        if (!input.getText().equals("")) {
+        if (code.equals(""))
             badCode.setText("The voucher code used is unavailable");
-        }
     }
 
     public void onBookClick(ActionEvent event){

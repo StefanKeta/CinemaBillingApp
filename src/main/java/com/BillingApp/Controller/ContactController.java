@@ -15,11 +15,15 @@ import java.io.IOException;
 
 public class ContactController extends SendEmail {
 
-    @FXML private TextArea message;
+    @FXML
+    protected TextArea message;
     @FXML private Button submit;
-    @FXML private CheckBox option1;
-    @FXML private CheckBox option2;
-    @FXML private CheckBox option3;
+    @FXML
+    protected CheckBox option1;
+    @FXML
+    protected CheckBox option2;
+    @FXML
+    protected CheckBox option3;
 
     @FXML
     void onBackClick(ActionEvent event) throws IOException {
@@ -58,6 +62,7 @@ public class ContactController extends SendEmail {
         else text+=option3.getText();
         text+="\n Comments or questions: \n" + message.getText() + "\n\n";
         sendEmail("ale.goldea@gmail.com","feedback", text,null);
+        SendEmail.showNotification();
         message.clear();
     }
 

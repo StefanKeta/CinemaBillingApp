@@ -1,21 +1,26 @@
 [ {
-  "name" : "Stefan Keta",
-  "age" : 21,
-  "email" : "stefan@mail.com",
-  "password" : "k�?�J������� ,���턯+��-�!P-�\u0011aJv2�eʲ��}B�Я`�\u0013����D}\u0000�6��"
+  "name" : "Client4",
+  "age" : 22,
+  "email" : "client4@mail.com",
+  "password" : "\u0002if����§\b/i&g�΋i(��λ3�H��|����\u0018*�$M/�MlbP�>�I\u001BTihjdc�g�"
 }, {
-  "name" : "John Doe",
+  "name" : "Client5",
+  "age" : 22,
+  "email" : "client5@mail.com",
+  "password" : "\u0018**;��0ַ�ʼ~J9�>h�Vq\u000Bi \u0013\u000B��Ӧ�_\u0006g,8���LZ1\u0004ā\u0016�N���� j�'\u0013����!�"
+}, {
+  "name" : "NAME",
   "age" : 20,
-  "email" : "user@mail.com",
-  "password" : "someuser"
+  "email" : "test@mail.com",
+  "password" : "��\u0018�tQS�\u0005��7B~X��/�R8Z��@��o;���[���-\u001F��g�Icj�\u0007����A{���+����"
 }, {
-  "name" : "Stefan Keta",
+  "name" : "Client2",
   "age" : 21,
-  "email" : "stefank@mail.com",
-  "password" : "\u001D�W��8���H\f/^p'\u0002߻|��\n2Q��X|\u001A�-\t��Ygf*ؿ~6\u0012\u0011#�`B�C���� ���<\u000B�\u0018"
+  "email" : "client2@mail.com",
+  "password" : "\u0001�\u001A!d��\u0006rOS=��|F�@Fδ_Tc�F�B}K�\u0013��t�\u001Eu��#\u001C��\u001Aqt\u001C�=��?\u001FP �U�z�(9�"
 }, {
-  "name" : "Stefan",
-  "age" : 21,
-  "email" : "stefanketa99@gmail.com",
-  "password" : "��n�� �\u0015=|U\u001E�2����E�\u000E���M03\u001Cz7[\u00198�q���o�1�[L?y�l:�董�\u000B�\u0007[\u0019�O"
+  "name" : "Client1",
+  "age" : 20,
+  "email" : "client1@mail.com",
+  "password" : "\u0010�Q\u0007�F��&�t�4j\u0003��\u0018\u0003�,cwzա)��^�#,�\u0005�V����ݧ�_N[})����[\u001D�R}2Ңh�"
 } ]

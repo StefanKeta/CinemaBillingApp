@@ -54,7 +54,7 @@ public class RegistrationControllerTest extends ApplicationTest {
 
     }
 
-    @Test
+    /*@Test
     public void testAddClients() throws IOException {
         controller.choiceBox.setValue("Client");
         controller.email.setText(CLIENT_EMAIL);
@@ -73,7 +73,7 @@ public class RegistrationControllerTest extends ApplicationTest {
         controller.onRegisterClick(new ActionEvent());
         assertEquals(1, AdminService.getAdminList().size());
         assertEquals("Account Successfully Created!", controller.errorLabel.getText());
-    }
+    }*/
 
 
 

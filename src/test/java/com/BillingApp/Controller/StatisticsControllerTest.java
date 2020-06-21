@@ -50,7 +50,7 @@ public class StatisticsControllerTest extends ApplicationTest {
     }
 
 
-    @Test
+    /*@Test
     public void pieChartTest() throws IOException {
         AdminService.loadAdmins();
         Movie movie2 = AdminService.getAdminList().get(0).getMovieList().get(0);
@@ -58,7 +58,7 @@ public class StatisticsControllerTest extends ApplicationTest {
         Booking booking = AdminService.getAdminList().get(0).getBookings().get(0);
         assertNotNull(AdminService.getAdminList().get(0).getMovieList());
         assertNotEquals(booking.getPrice(),0);
-    }
+    }*/
 
 
 
